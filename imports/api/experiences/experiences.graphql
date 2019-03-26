@@ -1,0 +1,12 @@
+# name
+# createdAt
+# [experienceId]
+
+type Experience {
+  _id: String!
+  name: String!
+}
+
+type Mutation {
+  createExperience: Experience
+}
