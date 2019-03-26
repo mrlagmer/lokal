@@ -8,7 +8,7 @@ const App = ({ data }) => {
   return (
     <div>
       <h1>{data.hi}</h1>
-      <ExperienceForm />
+      <ExperienceForm refetch={data.refetch} />
       <ul>
         {data.experiences.map(experience => (
           <li key={experience._id}>{experience.name}</li>

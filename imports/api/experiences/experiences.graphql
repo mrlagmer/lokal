@@ -8,5 +8,5 @@ type Experience {
 }
 
 type Mutation {
-  createExperience: Experience
+  createExperience(name: String!): Experience
 }

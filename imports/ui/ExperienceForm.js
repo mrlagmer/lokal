@@ -2,9 +2,28 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 
-export default class ExperienceForm extends Component {
+const createExperience = gql`
+  mutation createExperience($name: String!) {
+    createExperience(name: $name) {
+      _id
+    }
+  }
+`;
+
+class ExperienceForm extends Component {
   submitForm = () => {
-    console.log(this.name.value);
+    this.props
+      .createExperience({
+        variables: {
+          name: this.name.value
+        }
+      })
+      .then(({ data }) => {
+        this.props.refetch();
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
   render() {
     return (
@@ -15,3 +34,7 @@ export default class ExperienceForm extends Component {
     );
   }
 }
+
+export default graphql(createExperience, {
+  name: "createExperience"
+})(ExperienceForm);

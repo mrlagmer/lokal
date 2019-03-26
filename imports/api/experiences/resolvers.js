@@ -8,10 +8,11 @@ export default {
   },
 
   Mutation: {
-    createExperience() {
-      // const experienceId = Experiences.insert({
-      //   name: "Test Experience"
-      // });
+    createExperience(obj, { name }, context) {
+      const experienceId = Experiences.insert({
+        name
+      });
+      return Experiences.findOne(experienceId);
     }
   }
 };
