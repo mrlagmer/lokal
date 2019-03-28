@@ -1,40 +1,58 @@
 import React, { Component } from "react";
 import gql from "graphql-tag";
-import { graphql } from "react-apollo";
+import { Mutation } from "react-apollo";
 
 const createExperience = gql`
   mutation createExperience($name: String!) {
     createExperience(name: $name) {
       _id
+      name
     }
   }
 `;
 
-class ExperienceForm extends Component {
-  submitForm = () => {
-    this.props
-      .createExperience({
-        variables: {
-          name: this.name.value
-        }
-      })
-      .then(({ data }) => {
-        this.props.refetch();
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  };
-  render() {
-    return (
-      <div>
-        <input type="text" ref={input => (this.name = input)} />
-        <button onClick={this.submitForm}>Submit</button>
-      </div>
-    );
+const ExperiencesQuery = gql`
+  {
+    experiences {
+      _id
+      name
+    }
   }
-}
+`;
 
-export default graphql(createExperience, {
-  name: "createExperience"
-})(ExperienceForm);
+const ExperienceForm = () => {
+  return (
+    <Mutation
+      mutation={createExperience}
+      update={(cache, { data: { createExperience } }) => {
+        const { experiences } = cache.readQuery({ query: ExperiencesQuery });
+        cache.writeQuery({
+          query: ExperiencesQuery,
+          data: { experiences: experiences.concat([createExperience]) }
+        });
+      }}
+    >
+      {(createExperience, { data }) => (
+        <div>
+          <form
+            onSubmit={e => {
+              e.preventDefault();
+              createExperience({ variables: { name: input.value } });
+              input.value = "";
+            }}
+          >
+            <input
+              type="text"
+              ref={node => {
+                input = node;
+              }}
+            />
+            <button onClick={this.submitForm}>Submit</button>
+          </form>
+        </div>
+      )}
+    </Mutation>
+  );
+};
+
+export default ExperienceForm;

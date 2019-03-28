@@ -9,4 +9,5 @@ type Experience {
 
 type Mutation {
   createExperience(name: String!): Experience
+  deleteExperience(_id: String!): Experience
 }
