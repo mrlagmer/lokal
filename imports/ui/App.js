@@ -2,6 +2,7 @@ import React from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 import ExperienceForm from "./ExperienceForm";
+import Experiences from "./Experiences";
 
 const App = ({ data }) => {
   if (data.loading) return null;
@@ -9,11 +10,7 @@ const App = ({ data }) => {
     <div>
       <h1>{data.hi}</h1>
       <ExperienceForm refetch={data.refetch} />
-      <ul>
-        {data.experiences.map(experience => (
-          <li key={experience._id}>{experience.name}</li>
-        ))}
-      </ul>
+      <Experiences />
     </div>
   );
 };

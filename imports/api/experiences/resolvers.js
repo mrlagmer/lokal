@@ -13,6 +13,13 @@ export default {
         name
       });
       return Experiences.findOne(experienceId);
+    },
+
+    deleteExperience(obj, { _id }, context) {
+      const experienceId = Experiences.remove({
+        _id
+      });
+      return { _id };
     }
   }
 };
