@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Query, Mutation } from "react-apollo";
 
+import { Button } from "./components/Button";
+
 const deleteExperience = gql`
   mutation deleteExperience($_id: String!) {
     deleteExperience(_id: $_id) {
@@ -38,7 +40,7 @@ const Experiences = () => (
               {(deleteExperience, { loading, error }) => (
                 <li key={experience._id}>
                   {experience.name}
-                  <button onClick={deleteExperience}>Delete</button>
+                  <Button onClick={deleteExperience}>Delete</Button>
                 </li>
               )}
             </Mutation>

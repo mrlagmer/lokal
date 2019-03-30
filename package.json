@@ -22,9 +22,11 @@
     "react": "^16.8.5",
     "react-apollo": "^2.5.2",
     "react-dom": "^16.8.5",
-    "react-router": "^5.0.0"
+    "react-router": "^5.0.0",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
-    "babel-plugin-inline-import": "^3.0.0"
+    "babel-plugin-inline-import": "^3.0.0",
+    "babel-plugin-styled-components": "^1.10.0"
   }
 }
