@@ -1,29 +1,25 @@
 import React from "react";
 import gql from "graphql-tag";
-import { graphql } from "react-apollo";
-import ExperienceForm from "./ExperienceForm";
-import Experiences from "./Experiences";
-import RegisterForm from "./RegisterForm";
-import LoginForm from "./LoginForm";
+import { Query } from "react-apollo";
 
-const App = ({ data }) => {
-  if (data.loading) return null;
-  return (
-    <div>
-      <h1>{data.hi}</h1>
-      <Experiences />
-    </div>
-  );
-};
-
-const hiQuery = gql`
+const HIQUERY = gql`
   {
     hi
-    experiences {
-      _id
-      name
-    }
   }
 `;
 
-export default graphql(hiQuery)(App);
+const App = () => (
+  <Query query={HIQUERY}>
+    {({ loading, error, data }) => {
+      if (loading) return <p>Loading...</p>;
+      if (error) return <p>Error :(</p>;
+      return (
+        <div>
+          <h1>{data.hi}</h1>
+        </div>
+      );
+    }}
+  </Query>
+);
+
+export default App;
