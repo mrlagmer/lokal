@@ -11,9 +11,6 @@ const App = ({ data }) => {
   return (
     <div>
       <h1>{data.hi}</h1>
-      <LoginForm />
-      <RegisterForm />
-      <ExperienceForm refetch={data.refetch} />
       <Experiences />
     </div>
   );
