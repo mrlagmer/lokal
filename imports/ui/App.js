@@ -2,6 +2,10 @@ import React from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 
+import Footer from "./components/Footer";
+import GlobalStyle from "./components/GlobalStyle";
+import { Main, AppDiv } from "./components/Main";
+
 const HIQUERY = gql`
   {
     hi
@@ -14,9 +18,13 @@ const App = () => (
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
       return (
-        <div>
-          <h1>{data.hi}</h1>
-        </div>
+        <AppDiv>
+          <GlobalStyle />
+          <Main>
+            <h1>{data.hi}</h1>
+          </Main>
+          <Footer />
+        </AppDiv>
       );
     }}
   </Query>
