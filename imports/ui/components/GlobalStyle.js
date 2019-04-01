@@ -1,9 +1,23 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('/fonts/SpaceGrotesk-Regular.woff2')format('woff2'),
+    url('/fonts/SpaceGrotesk-Regular.woff')format('woff');
+  }
+
+  @font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('/fonts/SpaceGrotesk-Bold.woff2')format('woff2'),
+    url('/fonts/SpaceGrotesk-Bold.woff')format('woff');
+    font-weight: bold;
+  }
+
   html {
   box-sizing: border-box;
   font-size: 16px;
+  font-family: 'SpaceGrotesk';
 }
 
 *, *:before, *:after {
