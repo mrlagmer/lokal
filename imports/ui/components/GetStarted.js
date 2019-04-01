@@ -15,6 +15,7 @@ const StyledGetStarted = styled.section`
 const P = styled.p`
   font-size: 1.5rem;
   color: ${colors.teal[5]};
+  font-weight: bold;
   margin-bottom: 1rem;
 `;
 

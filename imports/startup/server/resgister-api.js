@@ -16,7 +16,7 @@ const typeDefs = [q, ExperiencesSchema];
 const resolver = {
   Query: {
     hi() {
-      return "Hello Stu";
+      return "Hello Parnell";
     }
   }
 };
