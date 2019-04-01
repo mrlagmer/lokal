@@ -5,6 +5,7 @@ import { Query } from "react-apollo";
 import Footer from "./components/Footer";
 import GlobalStyle from "./components/GlobalStyle";
 import { Main, AppDiv } from "./components/Main";
+import GetStarted from "./components/GetStarted";
 
 const HIQUERY = gql`
   {
@@ -22,6 +23,7 @@ const App = () => (
           <GlobalStyle />
           <Main>
             <h1>{data.hi}</h1>
+            <GetStarted />
           </Main>
           <Footer />
         </AppDiv>
