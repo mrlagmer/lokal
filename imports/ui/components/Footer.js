@@ -28,9 +28,15 @@ const FooterInner = styled.div`
   padding: 4rem 3rem;
 `;
 
+const FooterLogo = styled.img`
+  height: 175px;
+  margin-right: 3rem;
+`;
+
 const FooterLinks = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-transform: uppercase;
   margin: 0rem 2rem;
 `;
@@ -42,15 +48,17 @@ const FooterA = styled.a`
 `;
 
 const FooterTagLine = styled.h3`
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #399e9a;
   margin-left: auto;
+  align-self: center;
 `;
 
 const Footer = () => (
   <StyledFooter>
     <FooterGradient />
     <FooterInner>
+      <FooterLogo src="/images/logo.svg" />
       <FooterLinks>
         <FooterA href="">Find An Experience</FooterA>
         <FooterA href="">My Account</FooterA>
