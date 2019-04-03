@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   font-size: 16px;
   font-family: 'SpaceGrotesk';
+  background-color: #f2f2f2;
 }
 
 *, *:before, *:after {

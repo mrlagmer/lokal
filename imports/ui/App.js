@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import GlobalStyle from "./components/GlobalStyle";
 import { Main, AppDiv } from "./components/Main";
 import GetStarted from "./components/GetStarted";
+import HeroHome from "./components/HeroHome";
 
 const HIQUERY = gql`
   {
@@ -22,7 +23,7 @@ const App = () => (
         <AppDiv>
           <GlobalStyle />
           <Main>
-            <h1>{data.hi}</h1>
+            <HeroHome />
             <GetStarted />
           </Main>
           <Footer />
