@@ -2,10 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 import { colors } from "./colors";
+import { fonts } from "./text/fonts";
+import Logo from "./Logo";
 
 const StyledHeroHome = styled.section`
   background: linear-gradient(${colors.aqua[5]}, ${colors.teal[5]});
   display: flex;
+  margin: auto;
+  max-width: 1730px;
+`;
+
+const HeroLogo = styled.div`
+  margin-top: 2rem;
+  margin-left: -2rem;
 `;
 
 const HeroImage = styled.img`
@@ -27,6 +36,7 @@ const HeroP = styled.p`
   color: ${colors.black[5]};
   font-size: 1.5rem;
   font-weight: bold;
+  line-height: ${fonts.lineHeight};
 `;
 
 const HeroDiv = styled.div`
@@ -39,6 +49,9 @@ const HeroDiv = styled.div`
 const HeroHome = () => (
   <StyledHeroHome>
     <HeroDiv>
+      <HeroLogo>
+        <Logo />
+      </HeroLogo>
       <HeroTextDiv>
         <HeroTextHeader>
           Explore
@@ -51,7 +64,9 @@ const HeroHome = () => (
         guides.
       </HeroP>
     </HeroDiv>
-    <HeroImage src="/images/hero.jpg" />
+    <div>
+      <HeroImage src="/images/hero.jpg" />
+    </div>
   </StyledHeroHome>
 );
 
