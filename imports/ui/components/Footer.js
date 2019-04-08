@@ -1,18 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
+import { colors } from "./colors";
+
 const FooterGradient = styled.div`
   padding: 0.5rem;
-  background: linear-gradient(
-    to right,
-    #399e9a,
-    #639fb8,
-    #928fc3,
-    #b583be,
-    #cd7aa8,
-    #e67189,
-    #f86b70
-  );
+  background: linear-gradient(to right, ${colors.lg});
 `;
 
 const StyledFooter = styled.footer`

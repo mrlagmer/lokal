@@ -9,7 +9,7 @@ const StyledHeroHome = styled.section`
   background: linear-gradient(${colors.aqua[5]}, ${colors.teal[5]});
   display: flex;
   margin: auto;
-  max-width: 1730px;
+  max-width: 1327px;
 `;
 
 const HeroLogo = styled.div`
