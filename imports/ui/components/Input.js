@@ -1,13 +1,11 @@
-import React from "react";
 import styled from "styled-components";
 
-const StyledInput = styled.input`
+const Input = styled.input`
   background-color: white;
   border-color: #dbdbdb;
   color: #363636;
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
   max-width: 100%;
-  width: 100%;
 
   align-items: center;
   border: 1px solid transparent;
@@ -43,9 +41,5 @@ const StyledInput = styled.input`
     box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
   }
 `;
-
-const Input = props => (
-  <StyledInput type={props.type} placeholder={props.placeholder} />
-);
 
 export default Input;
