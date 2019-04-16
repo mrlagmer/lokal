@@ -16,8 +16,8 @@ export const StyledArrowButton = styled(Button)`
   border: 2px solid black;
 `;
 
-export const ArrowButton = () => (
-  <StyledArrowButton>
+export const ArrowButton = props => (
+  <StyledArrowButton type={props.type}>
     <i className="fas fa-caret-right fa-2x" />
   </StyledArrowButton>
 );

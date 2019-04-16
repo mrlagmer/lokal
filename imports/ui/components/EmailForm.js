@@ -63,8 +63,19 @@ const EmailForm = () => (
       initialValues={{ email: "" }}
       validationSchema={EmailSchema}
       onSubmit={(values, { setSubmitting }) => {
-        console.log(values);
-        setSubmitting(false);
+        Meteor.call(
+          "mailChimp.addEmail",
+          {
+            email: values.email
+          },
+          (err, res) => {
+            if (err) {
+              alert(err);
+            } else {
+              setSubmitting(false);
+            }
+          }
+        );
       }}
     >
       {({
