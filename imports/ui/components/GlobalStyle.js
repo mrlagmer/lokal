@@ -43,6 +43,17 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.pages {
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin: 1rem 0;
+
+  }
+}
 `;
 
 export default GlobalStyle;

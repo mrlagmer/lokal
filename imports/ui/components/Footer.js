@@ -59,7 +59,7 @@ const Footer = () => (
       </FooterLinks>
       <FooterLinks>
         <FooterA href="">Become a Guide</FooterA>
-        <FooterA href="">About Us</FooterA>
+        <FooterA href="/about">About Us</FooterA>
         <FooterA href="">Help</FooterA>
       </FooterLinks>
       <FooterTagLine>

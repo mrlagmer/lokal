@@ -8,6 +8,7 @@ import ExperienceForm from "../../ui/ExperienceForm";
 import AuthPageSignIn from "../../ui/LoginForm";
 import AuthPageJoin from "../../ui/RegisterForm";
 import Experiences from "../../ui/Experiences";
+import AboutUs from "../../ui/pages/aboutus";
 
 const browserHistory = createBrowserHistory();
 
@@ -19,6 +20,7 @@ export const RenderRoutes = () => (
       <Route exact path="/experiences" component={Experiences} />
       <Route exact path="/signin" component={AuthPageSignIn} />
       <Route exact path="/join" component={AuthPageJoin} />
+      <Route exact path="/about" component={AboutUs} />
     </Switch>
   </Router>
 );

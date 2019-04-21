@@ -24,6 +24,7 @@
     "react": "^16.8.5",
     "react-apollo": "^2.5.2",
     "react-dom": "^16.8.5",
+    "react-markdown": "^4.0.8",
     "react-router": "^5.0.0",
     "reshader": "^1.0.0",
     "simpl-schema": "^1.5.5",
