@@ -8,6 +8,7 @@ import { Main, AppDiv } from "./components/Main";
 import GetStarted from "./components/GetStarted";
 import HeroHome from "./components/HeroHome";
 import GuidesHome from "./components/GuidesHome";
+import EmailForm from "./components/EmailForm";
 
 const HIQUERY = gql`
   {
@@ -25,6 +26,7 @@ const App = () => (
           <GlobalStyle />
           <Main>
             <HeroHome />
+            <EmailForm />
             <GuidesHome />
             <GetStarted />
           </Main>
