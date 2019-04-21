@@ -28,7 +28,7 @@ const HeroTextHeader = styled.h2`
 `;
 
 const HeroTextDiv = styled.div`
-  margin-right: -25%;
+  margin-right: -35%;
   z-index: 1;
 `;
 
@@ -37,6 +37,7 @@ const HeroP = styled.p`
   font-size: 1.5rem;
   font-weight: bold;
   line-height: ${fonts.lineHeight};
+  margin-bottom: 2rem;
 `;
 
 const HeroDiv = styled.div`

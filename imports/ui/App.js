@@ -9,6 +9,7 @@ import GetStarted from "./components/GetStarted";
 import HeroHome from "./components/HeroHome";
 import GuidesHome from "./components/GuidesHome";
 import EmailForm from "./components/EmailForm";
+import Featured from "./components/Featured";
 
 const HIQUERY = gql`
   {
@@ -26,6 +27,7 @@ const App = () => (
           <GlobalStyle />
           <Main>
             <HeroHome />
+            <Featured />
             <EmailForm />
             <GuidesHome />
             <GetStarted />
