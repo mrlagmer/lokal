@@ -4,12 +4,15 @@ import styled from "styled-components";
 import { colors } from "./colors";
 import { fonts } from "./text/fonts";
 import Logo from "./Logo";
+import media from "./media";
 
 const StyledHeroHome = styled.section`
   background: linear-gradient(${colors.aqua[5]}, ${colors.teal[5]});
   display: flex;
   margin: auto;
   max-width: 1327px;
+
+  ${media.tablet`display:block;`}
 `;
 
 const HeroLogo = styled.div`
@@ -25,11 +28,13 @@ const HeroImage = styled.img`
 const HeroTextHeader = styled.h2`
   color: white;
   font-size: 7rem;
+  ${media.desktop`font-size: 5rem;`}
 `;
 
 const HeroTextDiv = styled.div`
   margin-right: -35%;
   z-index: 1;
+  ${media.phone`margin-right: 0;`}
 `;
 
 const HeroP = styled.p`
@@ -45,6 +50,7 @@ const HeroDiv = styled.div`
   flex-direction: column;
   padding-left: 2rem;
   max-width: 40%;
+  ${media.tablet`max-width:100%;`}
 `;
 
 const HeroHome = () => (
