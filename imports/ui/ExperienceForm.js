@@ -5,10 +5,35 @@ import { Mutation } from "react-apollo";
 import Experiences from "./Experiences";
 
 const createExperience = gql`
-  mutation createExperience($name: String!) {
-    createExperience(name: $name) {
+  mutation createExperience(
+    $name: String!
+    $location: String!
+    $length: Int!
+    $language: String!
+    $description: String!
+    $featured: Boolean!
+    $includes: String
+    $bring: String
+  ) {
+    createExperience(
+      name: $name
+      location: $location
+      length: $length
+      language: $language
+      description: $description
+      featured: $featured
+      includes: $includes
+      bring: $bring
+    ) {
       _id
       name
+      location
+      length
+      language
+      description
+      featured
+      includes
+      bring
     }
   }
 `;
@@ -18,6 +43,13 @@ const ExperiencesQuery = gql`
     experiences {
       _id
       name
+      location
+      length
+      language
+      description
+      featured
+      includes
+      bring
     }
   }
 `;
@@ -40,14 +72,72 @@ const ExperienceForm = () => {
             <form
               onSubmit={e => {
                 e.preventDefault();
-                createExperience({ variables: { name: input.value } });
-                input.value = "";
+                createExperience({
+                  variables: {
+                    name: nameInput.value,
+                    location: locationInput.value,
+                    length: lengthInput.value,
+                    language: languageInput.value,
+                    description: descriptionInput.value,
+                    featured: featuredInput.value,
+                    includes: includesInput.value,
+                    bring: bringInput.value
+                  }
+                })
+                  .then(() => {
+                    nameInput.value = "";
+                  })
+                  .catch(error => {
+                    console.log(error);
+                  });
               }}
             >
               <input
                 type="text"
                 ref={node => {
-                  input = node;
+                  nameInput = node;
+                }}
+              />
+              <input
+                type="text"
+                ref={node => {
+                  locationInput = node;
+                }}
+              />
+              <input
+                type="number"
+                ref={node => {
+                  lengthInput = node;
+                }}
+              />
+              <input
+                type="text"
+                ref={node => {
+                  languageInput = node;
+                }}
+              />
+              <input
+                type="text"
+                ref={node => {
+                  descriptionInput = node;
+                }}
+              />
+              <input
+                type="checkbox"
+                ref={node => {
+                  featuredInput = node;
+                }}
+              />
+              <input
+                type="text"
+                ref={node => {
+                  includesInput = node;
+                }}
+              />
+              <input
+                type="text"
+                ref={node => {
+                  bringInput = node;
                 }}
               />
               <button onClick={this.submitForm}>Submit</button>

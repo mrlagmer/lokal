@@ -4,7 +4,7 @@ import merge from "lodash/merge";
 
 import ExperiencesSchema from "../../api/experiences/experiences.graphql";
 import ExperiencesResolvers from "../../api/experiences/resolvers";
-//hiii man
+//hiii manyuiu
 const q = `
 type Query {
     hi: String

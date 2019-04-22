@@ -5,9 +5,25 @@
 type Experience {
   _id: String!
   name: String!
+  location: String!
+  length: Int!
+  includes: String
+  language: String!
+  description: String!
+  bring: String
+  featured: Boolean!
 }
 
 type Mutation {
-  createExperience(name: String!): Experience
+  createExperience(
+    name: String!
+    location: String!
+    length: Int!
+    language: String!
+    description: String!
+    featured: Boolean!
+    includes: String
+    bring: String
+  ): Experience
   deleteExperience(_id: String!): Experience
 }
