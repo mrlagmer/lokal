@@ -12,7 +12,7 @@ import media from "./media";
 const StyledEmailForm = styled.section`
   display: flex;
   justify-content: space-evenly;
-  margin: 5rem 0;
+  margin: 7rem 0;
   ${media.tablet`flex-direction:column;`}
 `;
 

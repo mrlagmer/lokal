@@ -29,11 +29,13 @@ const HeroTextHeader = styled.h2`
   color: white;
   font-size: 7rem;
   ${media.desktop`font-size: 5rem;`}
+  ${media.phone`font-size: 4rem;`}
 `;
 
 const HeroTextDiv = styled.div`
   margin-right: -35%;
   z-index: 1;
+  ${media.tablet`margin-right: 0;`}
   ${media.phone`margin-right: 0;`}
 `;
 
@@ -43,6 +45,7 @@ const HeroP = styled.p`
   font-weight: bold;
   line-height: ${fonts.lineHeight};
   margin-bottom: 2rem;
+  ${media.phone`font-size: 1rem;`}
 `;
 
 const HeroDiv = styled.div`

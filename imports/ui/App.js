@@ -27,7 +27,6 @@ const App = () => (
           <GlobalStyle />
           <Main>
             <HeroHome />
-            <Featured />
             <EmailForm />
             <GuidesHome />
             <GetStarted />
