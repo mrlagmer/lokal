@@ -26,6 +26,7 @@ const FooterInner = styled.div`
 const FooterLogo = styled.img`
   height: 175px;
   margin-right: 3rem;
+  align-self: center;
 `;
 
 const FooterLinks = styled.div`
@@ -56,13 +57,20 @@ const Footer = () => (
     <FooterInner>
       <FooterLogo src="/images/logo.svg" />
       <FooterLinks>
-        <FooterA href="">Become a Guide</FooterA>
-        <FooterA href="">Contact</FooterA>
+        <FooterA href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform">
+          Become a Guide
+        </FooterA>
+        <FooterA href="https://docs.google.com/forms/d/1eX5NLRbe3_d1W-I-HJrCPhMJo_Q_9QMdjpyCzahA7mc/viewform">
+          Contact
+        </FooterA>
         <FooterA href="/about">About Us</FooterA>
-        <FooterA href="">Privacy & Terms</FooterA>
+        <FooterA href="/privacy">Privacy Policy</FooterA>
+        <FooterA href="/cancelation-policy">Cancelation Policy</FooterA>
+        <FooterA href="/code-of-conduct">Code of Conduct</FooterA>
+        <FooterA href="/terms-conditions">Terms & Conditions</FooterA>
       </FooterLinks>
       <FooterTagLine>
-        Local expertise. <br /> Big on adventure.
+        lokal expertise. <br /> Big on adventure.
       </FooterTagLine>
     </FooterInner>
   </StyledFooter>

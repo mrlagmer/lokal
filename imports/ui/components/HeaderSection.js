@@ -5,11 +5,13 @@ import { Button } from "./Button";
 import { Header2 } from "./text/Header2";
 import { colors } from "./colors";
 import media from "./media";
+import { common } from "./Common";
 
-const StyledGetStarted = styled.section`
+const StyledHeaderSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: ${common.margintb} 0;
   padding: 3rem 4rem;
   ${media.phone`justify-content: center;`}
 `;
@@ -21,12 +23,14 @@ const P = styled.p`
   margin-bottom: 2rem;
 `;
 
-const GetStarted = () => (
-  <StyledGetStarted>
-    <Header2>Ready to get started?</Header2>
-    <P>Explore with local guide & get connected with authentic experiences. </P>
-    <Button>Get Started</Button>
-  </StyledGetStarted>
+const HeaderSection = props => (
+  <StyledHeaderSection>
+    <Header2>{props.header}</Header2>
+    <P>{props.p}</P>
+    <Button as="a" href={props.href}>
+      {props.button_text}
+    </Button>
+  </StyledHeaderSection>
 );
 
-export default GetStarted;
+export default HeaderSection;

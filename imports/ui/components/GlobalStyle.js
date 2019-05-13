@@ -54,6 +54,10 @@ img {
 
   }
 }
+
+.carousel .slide {
+    background-color: transparent !important;
+  }
 `;
 
 export default GlobalStyle;
