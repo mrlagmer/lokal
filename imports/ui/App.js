@@ -17,7 +17,7 @@ const App = () => (
       <title>
         Explore Manila Tours, Team Building & Things To Do | Explore Lokal.ly
       </title>
-      <meta name="viewport" content="width=device-width" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <script>
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
