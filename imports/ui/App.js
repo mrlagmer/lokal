@@ -14,7 +14,10 @@ const App = () => (
   <AppDiv>
     <Helmet>
       <meta charSet="utf-8" />
-      <title>Lokal.ly | Explore like a lokal.</title>
+      <title>
+        Explore Manila Tours, Team Building & Things To Do | Explore Lokal.ly
+      </title>
+      <meta name="viewport" content="width=device-width" />
       <script>
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
