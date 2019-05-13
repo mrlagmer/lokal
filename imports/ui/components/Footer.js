@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { colors } from "./colors";
+import media from "./media";
 
 const FooterGradient = styled.div`
   padding: 0.5rem;
@@ -19,11 +20,13 @@ const FooterInner = styled.div`
   font-weight: bold;
   display: flex;
   padding: 4rem 3rem;
+  ${media.phone`justify-content: center;`}
 `;
 
 const FooterLogo = styled.img`
   height: 175px;
   margin-right: 3rem;
+  align-self: center;
 `;
 
 const FooterLinks = styled.div`
@@ -45,6 +48,7 @@ const FooterTagLine = styled.h3`
   color: #399e9a;
   margin-left: auto;
   align-self: center;
+  ${media.phone`display:none;`}
 `;
 
 const Footer = () => (
@@ -53,17 +57,20 @@ const Footer = () => (
     <FooterInner>
       <FooterLogo src="/images/logo.svg" />
       <FooterLinks>
-        <FooterA href="">Find An Experience</FooterA>
-        <FooterA href="">My Account</FooterA>
-        <FooterA href="">Contact</FooterA>
-      </FooterLinks>
-      <FooterLinks>
-        <FooterA href="">Become a Guide</FooterA>
+        <FooterA href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform">
+          Become a Guide
+        </FooterA>
+        <FooterA href="https://docs.google.com/forms/d/1eX5NLRbe3_d1W-I-HJrCPhMJo_Q_9QMdjpyCzahA7mc/viewform">
+          Contact
+        </FooterA>
         <FooterA href="/about">About Us</FooterA>
-        <FooterA href="">Help</FooterA>
+        <FooterA href="/privacy">Privacy Policy</FooterA>
+        <FooterA href="/cancelation-policy">Cancelation Policy</FooterA>
+        <FooterA href="/code-of-conduct">Code of Conduct</FooterA>
+        <FooterA href="/terms-conditions">Terms & Conditions</FooterA>
       </FooterLinks>
       <FooterTagLine>
-        Local expertise. <br /> Big on adventure.
+        lokal expertise. <br /> Big on adventure.
       </FooterTagLine>
     </FooterInner>
   </StyledFooter>

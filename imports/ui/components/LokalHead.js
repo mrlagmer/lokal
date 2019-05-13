@@ -10,7 +10,9 @@ const StyledLogo = styled.div`
 const LokalHead = () => (
   <React.Fragment>
     <StyledLogo>
-      <Logo />
+      <a href="/">
+        <Logo />
+      </a>
     </StyledLogo>
   </React.Fragment>
 );

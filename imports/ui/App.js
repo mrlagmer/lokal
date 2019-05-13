@@ -1,42 +1,50 @@
 import React from "react";
-import gql from "graphql-tag";
-import { Query } from "react-apollo";
+import { Helmet } from "react-helmet";
 
 import Footer from "./components/Footer";
 import GlobalStyle from "./components/GlobalStyle";
 import { Main, AppDiv } from "./components/Main";
-import GetStarted from "./components/GetStarted";
+import HeaderSection from "./components/HeaderSection";
 import HeroHome from "./components/HeroHome";
 import GuidesHome from "./components/GuidesHome";
 import EmailForm from "./components/EmailForm";
-import Featured from "./components/Featured";
-
-const HIQUERY = gql`
-  {
-    hi
-  }
-`;
+import { googleAnalyticsId } from "./tools/General";
 
 const App = () => (
-  <Query query={HIQUERY}>
-    {({ loading, error, data }) => {
-      if (loading) return <p>Loading...</p>;
-      if (error) return <p>Error :(</p>;
-      return (
-        <AppDiv>
-          <GlobalStyle />
-          <Main>
-            <HeroHome />
-            <Featured />
-            <EmailForm />
-            <GuidesHome />
-            <GetStarted />
-          </Main>
-          <Footer />
-        </AppDiv>
-      );
-    }}
-  </Query>
+  <AppDiv>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Lokal.ly | Explore like a lokal.</title>
+      <script>
+        {`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','${googleAnalyticsId}');
+        `}
+      </script>
+    </Helmet>
+    <GlobalStyle />
+    <Main>
+      <HeroHome />
+      <HeaderSection
+        header="Have a team looking for activities?"
+        p="Find local guides who can help your team develop and grow"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdd6fVYwNETmMp01TQYbDq7QkZQ0BX9Ir2DbcFG8hFNVMisJQ/viewform"
+        button_text="Inquire now"
+      />
+      <EmailForm />
+      <GuidesHome />
+      <HeaderSection
+        header="Ready to get started?"
+        p="Become a local guide and share your experience with travelers and teams"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform"
+        button_text="Get Started!"
+      />
+    </Main>
+    <Footer />
+  </AppDiv>
 );
 
 export default App;

@@ -5,13 +5,16 @@ import { colors } from "./colors";
 import { fonts } from "./text/fonts";
 import Logo from "./Logo";
 import media from "./media";
+import { Button } from "./Button";
+import { common } from "./Common";
 
 const StyledHeroHome = styled.section`
   background: linear-gradient(${colors.aqua[5]}, ${colors.teal[5]});
   display: flex;
-  margin: auto;
+  margin-bottom: ${common.margintb};
+  margin-left: auto;
+  margin-right: auto;
   max-width: 1327px;
-
   ${media.tablet`display:block;`}
 `;
 
@@ -23,17 +26,20 @@ const HeroLogo = styled.div`
 const HeroImage = styled.img`
   margin-left: auto;
   margin-bottom: -76px;
+  ${media.phone`margin-bottom: 0;`}
 `;
 
 const HeroTextHeader = styled.h2`
   color: white;
   font-size: 7rem;
   ${media.desktop`font-size: 5rem;`}
+  ${media.phone`font-size: 4rem;`}
 `;
 
 const HeroTextDiv = styled.div`
   margin-right: -35%;
   z-index: 1;
+  ${media.tablet`margin-right: 0;`}
   ${media.phone`margin-right: 0;`}
 `;
 
@@ -43,6 +49,7 @@ const HeroP = styled.p`
   font-weight: bold;
   line-height: ${fonts.lineHeight};
   margin-bottom: 2rem;
+  ${media.phone`font-size: 1rem;`}
 `;
 
 const HeroDiv = styled.div`
@@ -51,6 +58,10 @@ const HeroDiv = styled.div`
   padding-left: 2rem;
   max-width: 40%;
   ${media.tablet`max-width:100%;`}
+`;
+
+const HeroButtonDiv = styled.div`
+  margin-bottom: 2.5rem;
 `;
 
 const HeroHome = () => (
@@ -62,7 +73,7 @@ const HeroHome = () => (
       <HeroTextDiv>
         <HeroTextHeader>
           Explore
-          <br /> like a local.
+          <br /> like a lokal.
         </HeroTextHeader>
       </HeroTextDiv>
       <HeroP>
@@ -70,9 +81,18 @@ const HeroHome = () => (
         adventure through our curated experiences with the expertise of local
         guides.
       </HeroP>
+      <HeroP>Want to become a guide?</HeroP>
+      <HeroButtonDiv>
+        <Button
+          as="a"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform"
+        >
+          Apply Now
+        </Button>
+      </HeroButtonDiv>
     </HeroDiv>
     <div>
-      <HeroImage src="/images/hero.jpg" />
+      <HeroImage src="/images/top.jpg" />
     </div>
   </StyledHeroHome>
 );

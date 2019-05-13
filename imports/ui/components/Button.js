@@ -9,6 +9,7 @@ export const Button = styled.button`
   padding: 1rem 4rem;
   border: 2px solid black;
   text-transform: uppercase;
+  text-decoration: none;
 `;
 
 export const StyledArrowButton = styled(Button)`

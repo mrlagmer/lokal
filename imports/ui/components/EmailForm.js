@@ -8,11 +8,13 @@ import { fonts } from "./text/fonts";
 import Input from "./Input";
 import { ArrowButton } from "./Button";
 import media from "./media";
+import { common } from "./Common";
 
 const StyledEmailForm = styled.section`
   display: flex;
   justify-content: space-evenly;
-  margin: 5rem 0;
+  margin-top: calc(76px + ${common.margintb});
+  margin-bottom: ${common.margintb};
   ${media.tablet`flex-direction:column;`}
 `;
 
@@ -42,6 +44,7 @@ const EmailFormElement = styled.form`
   padding: 0 2rem;
   ${media.tablet`margin-top:3rem;`}
   ${media.phone`width: 100%;`}
+  ${media.phone`margin-top:11rem;`}
 `;
 
 const EmailP = styled.p`
@@ -63,68 +66,84 @@ const EmailSchema = Yup.object().shape({
     .required("Required")
 });
 
-const EmailForm = () => (
-  <StyledEmailForm>
-    <FlexDiv>
-      <ImageDiv>
-        <Image src="/images/wine.jpg" />
-      </ImageDiv>
-      <div>
-        <img src="/images/logo_repeat.png" />
-      </div>
-    </FlexDiv>
-    <Formik
-      initialValues={{ email: "" }}
-      validationSchema={EmailSchema}
-      onSubmit={(values, { setSubmitting }) => {
-        Meteor.call(
-          "mailChimp.addEmail",
-          {
-            email: values.email
-          },
-          (err, res) => {
-            if (err) {
-              alert(err);
-            } else {
-              setSubmitting(false);
-            }
-          }
-        );
-      }}
-    >
-      {({
-        values,
-        errors,
-        touched,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting
-      }) => (
-        <EmailFormElement onSubmit={handleSubmit}>
-          <EmailP>Stay in the Loop.</EmailP>
-          <EmailText>
-            Get the latest updates on new experiences, travel stories & special
-            offers exclusive to our newsletter.
-          </EmailText>
+class EmailForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { success: false };
+  }
+
+  render() {
+    return (
+      <StyledEmailForm>
+        <FlexDiv>
+          <ImageDiv>
+            <Image src="/images/nathaniel-sison-wheel.jpg" />
+          </ImageDiv>
           <div>
-            <Input
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.email}
-              width="60%"
-              type="email"
-              name="email"
-              required
-              placeholder="Email Address"
-            />
-            <ArrowButton type="submit" disabled={isSubmitting} />
-            {errors.email && touched.email && errors.email}
+            <img src="/images/logo_repeat.png" />
           </div>
-        </EmailFormElement>
-      )}
-    </Formik>
-  </StyledEmailForm>
-);
+        </FlexDiv>
+        <Formik
+          initialValues={{ email: "" }}
+          validationSchema={EmailSchema}
+          onSubmit={(values, { setSubmitting }) => {
+            Meteor.call(
+              "mailChimp.addEmail",
+              {
+                email: values.email
+              },
+              (err, res) => {
+                if (err) {
+                  alert(err);
+                } else {
+                  setSubmitting(false);
+                  this.setState({
+                    success: true
+                  });
+                }
+              }
+            );
+          }}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting
+          }) => (
+            <EmailFormElement onSubmit={handleSubmit}>
+              <EmailP>Stay in the Loop.</EmailP>
+              <EmailText>
+                Get the latest updates on new experiences, travel stories &
+                special offers exclusive to our newsletter.
+              </EmailText>
+              {this.state.success ? (
+                <h1>Woo! Thanks we will be in touch.</h1>
+              ) : (
+                <div>
+                  <Input
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    width="60%"
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Email Address"
+                  />
+                  <ArrowButton type="submit" disabled={isSubmitting} />
+                  {errors.email && touched.email && errors.email}
+                </div>
+              )}
+            </EmailFormElement>
+          )}
+        </Formik>
+      </StyledEmailForm>
+    );
+  }
+}
 
 export default EmailForm;
