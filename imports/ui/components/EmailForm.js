@@ -60,6 +60,19 @@ const EmailText = styled.p`
   margin-bottom: 1rem;
 `;
 
+const SocialDiv = styled.div`
+  margin-top: 1rem;
+`;
+
+const SocialLink = styled.a`
+  margin-right: 1.5rem;
+  color: ${colors.teal[5]};
+`;
+
+const SocialLinkInsta = styled(SocialLink)`
+  color: ${colors.red[5]};
+`;
+
 const EmailSchema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid email")
@@ -138,6 +151,14 @@ class EmailForm extends React.Component {
                   {errors.email && touched.email && errors.email}
                 </div>
               )}
+              <SocialDiv>
+                <SocialLink href="https://www.facebook.com/explore.lokally/">
+                  <i class="fab fa-facebook-f fa-lg" />
+                </SocialLink>
+                <SocialLinkInsta href="https://www.instagram.com/explore.lokally/">
+                  <i class="fab fa-instagram fa-lg" />
+                </SocialLinkInsta>
+              </SocialDiv>
             </EmailFormElement>
           )}
         </Formik>
