@@ -1,7 +1,7 @@
 export const AboutText = `
-## Dive into the local culture.
+## Dive into the lokal culture.
 
-We're getting local guides together with anyone who wants to find a new experience. This is a calling to those who love to explore and seek adventure. Find out what’s happening through Lokally.
+We're getting lokal guides together with anyone who wants to find a new experience. This is a calling to those who love to explore and seek adventure. Find out what’s happening through Lokally.
 
 ## Our Mission
 

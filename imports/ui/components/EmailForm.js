@@ -93,7 +93,7 @@ class EmailForm extends React.Component {
             <Image src="/images/nathaniel-sison-wheel.jpg" />
           </ImageDiv>
           <div>
-            <img src="/images/logo_repeat.png" />
+            <img src="/images/lokal4Xb.png" width="144" height="265" />
           </div>
         </FlexDiv>
         <Formik

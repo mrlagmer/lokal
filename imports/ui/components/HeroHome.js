@@ -77,8 +77,8 @@ const HeroHome = () => (
         </HeroTextHeader>
       </HeroTextDiv>
       <HeroP>
-        Connect to the very best local culture has to offer. Eat, drink and
-        adventure through our curated experiences with the expertise of local
+        Connect to the very best lokal culture has to offer. Eat, drink and
+        adventure through our curated experiences with the expertise of lokal
         guides.
       </HeroP>
       <HeroP>Want to become a guide?</HeroP>

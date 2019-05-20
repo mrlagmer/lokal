@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Button } from "./Button";
 import media from "./media";
 import { common } from "./Common";
+import { colors } from "./colors";
 
 import { GuidePat, GuideVenji, GuideMallet } from "./GuideBios";
 
@@ -32,6 +33,16 @@ const StyledGuidesTop = styled.div`
   ${media.tablet`padding-left: 0;`}
 `;
 
+const StyledGuidesLokal = styled.p`
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  font-family: "HorizonOutlined";
+  color: linear-gradient(to right, ${colors["lg"]});
+  background: linear-gradient(to right, ${colors["lg"]});
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
+
 const StyledGuidesP = styled.p`
   font-size: 2.4rem;
   text-transform: uppercase;
@@ -48,7 +59,7 @@ const GuidesHome = () => (
   <StyledGuidesHome>
     <GuidesFlexBox>
       <StyledGuidesTop>
-        <img src="/images/Logo_Outline.png" />
+        <StyledGuidesLokal>Lokally</StyledGuidesLokal>
         <StyledGuidesP>Guides</StyledGuidesP>
       </StyledGuidesTop>
       <StyledGuidesTop>

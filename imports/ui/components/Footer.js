@@ -83,7 +83,7 @@ const Footer = () => (
       </FooterLinks>
       <FooterTagLine>
         <p>
-          lokal expertise. <br /> Big on adventure.
+          Think globally, <br /> Travel lokally.
         </p>
         <SocialDiv>
           <SocialLink href="https://www.facebook.com/explore.lokally/">

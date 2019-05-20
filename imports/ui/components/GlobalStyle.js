@@ -14,6 +14,11 @@ const GlobalStyle = createGlobalStyle`
     font-weight: bold;
   }
 
+  @font-face {
+    font-family: 'HorizonOutlined';
+    src: url('/fonts/Horizon-Outlined.woff')format('woff');
+  }
+
   html {
   box-sizing: border-box;
   font-size: 16px;
