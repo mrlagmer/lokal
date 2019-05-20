@@ -51,6 +51,18 @@ const FooterTagLine = styled.h3`
   ${media.phone`display:none;`}
 `;
 
+const SocialDiv = styled.div`
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+`;
+
+const SocialLink = styled.a`
+  font-size: 1rem;
+  margin-right: 1.5rem;
+  color: white;
+`;
+
 const Footer = () => (
   <StyledFooter>
     <FooterGradient />
@@ -70,7 +82,17 @@ const Footer = () => (
         <FooterA href="/terms-conditions">Terms & Conditions</FooterA>
       </FooterLinks>
       <FooterTagLine>
-        lokal expertise. <br /> Big on adventure.
+        <p>
+          Think globally, <br /> Travel lokally.
+        </p>
+        <SocialDiv>
+          <SocialLink href="https://www.facebook.com/explore.lokally/">
+            <i class="fab fa-facebook-f fa-lg" />
+          </SocialLink>
+          <SocialLink href="https://www.instagram.com/explore.lokally/">
+            <i class="fab fa-instagram fa-lg" />
+          </SocialLink>
+        </SocialDiv>
       </FooterTagLine>
     </FooterInner>
   </StyledFooter>
