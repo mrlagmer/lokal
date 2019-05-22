@@ -8,7 +8,7 @@ const createExperience = gql`
   mutation createExperience(
     $name: String!
     $location: String!
-    $length: Int!
+    $length: String!
     $language: String!
     $description: String!
     $featured: Boolean!
@@ -79,7 +79,7 @@ const ExperienceForm = () => {
                     length: lengthInput.value,
                     language: languageInput.value,
                     description: descriptionInput.value,
-                    featured: featuredInput.value,
+                    featured: featuredInput.value == "1" ? true : false,
                     includes: includesInput.value,
                     bring: bringInput.value
                   }
@@ -105,7 +105,7 @@ const ExperienceForm = () => {
                 }}
               />
               <input
-                type="number"
+                type="text"
                 ref={node => {
                   lengthInput = node;
                 }}
@@ -127,6 +127,7 @@ const ExperienceForm = () => {
                 ref={node => {
                   featuredInput = node;
                 }}
+                value="1"
               />
               <input
                 type="text"

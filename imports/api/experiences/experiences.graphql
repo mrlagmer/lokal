@@ -6,7 +6,7 @@ type Experience {
   _id: String!
   name: String!
   location: String!
-  length: Int!
+  length: String!
   includes: String
   language: String!
   description: String!
@@ -18,7 +18,7 @@ type Mutation {
   createExperience(
     name: String!
     location: String!
-    length: Int!
+    length: String!
     language: String!
     description: String!
     featured: Boolean!
