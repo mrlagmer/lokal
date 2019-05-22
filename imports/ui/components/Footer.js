@@ -67,7 +67,7 @@ const Footer = () => (
   <StyledFooter>
     <FooterGradient />
     <FooterInner>
-      <FooterLogo src="/images/logo.svg" />
+      <FooterLogo src="/images/lokalfoot.png" />
       <FooterLinks>
         <FooterA href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform">
           Become a Guide
