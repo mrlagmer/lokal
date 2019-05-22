@@ -59,7 +59,7 @@ const GuidesHome = () => (
   <StyledGuidesHome>
     <GuidesFlexBox>
       <StyledGuidesTop>
-        <StyledGuidesLokal>Lokally</StyledGuidesLokal>
+        <StyledGuidesLokal>Lokal.ly</StyledGuidesLokal>
         <StyledGuidesP>Guides</StyledGuidesP>
       </StyledGuidesTop>
       <StyledGuidesTop>
