@@ -18,7 +18,10 @@ export default {
         description,
         featured,
         includes,
-        bring
+        bring,
+        slug,
+        type,
+        cost
       },
       context
     ) {
@@ -30,7 +33,10 @@ export default {
         description,
         featured,
         includes,
-        bring
+        bring,
+        slug,
+        type,
+        cost
       });
       return Experiences.findOne(experienceId);
     },

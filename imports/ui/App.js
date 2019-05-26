@@ -5,9 +5,9 @@ import Footer from "./components/Footer";
 import GlobalStyle from "./components/GlobalStyle";
 import { Main, AppDiv } from "./components/Main";
 import HeaderSection from "./components/HeaderSection";
-import HeroHome from "./components/HeroHome";
-import GuidesHome from "./components/GuidesHome";
-import EmailForm from "./components/EmailForm";
+import HeroHome from "./components/home/HeroHome";
+import GuidesHome from "./components/home/GuidesHome";
+import EmailForm from "./components/home/EmailForm";
 import { googleAnalyticsId } from "./tools/General";
 
 const App = () => (

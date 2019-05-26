@@ -5,13 +5,16 @@
 type Experience {
   _id: String!
   name: String!
-  location: String!
-  length: String!
+  location: String
+  length: String
   includes: String
-  language: String!
+  language: String
   description: String!
   bring: String
   featured: Boolean!
+  slug: String
+  type: String
+  cost: String
 }
 
 type Mutation {
@@ -24,6 +27,9 @@ type Mutation {
     featured: Boolean!
     includes: String
     bring: String
+    slug: String
+    type: String
+    cost: String
   ): Experience
   deleteExperience(_id: String!): Experience
 }

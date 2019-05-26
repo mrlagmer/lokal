@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 
-import Experiences from "./Experiences";
-
 const createExperience = gql`
   mutation createExperience(
     $name: String!
@@ -14,6 +12,7 @@ const createExperience = gql`
     $featured: Boolean!
     $includes: String
     $bring: String
+    $slug: String
   ) {
     createExperience(
       name: $name
@@ -24,6 +23,7 @@ const createExperience = gql`
       featured: $featured
       includes: $includes
       bring: $bring
+      slug: $slug
     ) {
       _id
       name
@@ -34,6 +34,7 @@ const createExperience = gql`
       featured
       includes
       bring
+      slug
     }
   }
 `;
@@ -50,6 +51,7 @@ const ExperiencesQuery = gql`
       featured
       includes
       bring
+      slug
     }
   }
 `;
@@ -81,7 +83,8 @@ const ExperienceForm = () => {
                     description: descriptionInput.value,
                     featured: featuredInput.value == "1" ? true : false,
                     includes: includesInput.value,
-                    bring: bringInput.value
+                    bring: bringInput.value,
+                    slug: slugInput.value
                   }
                 })
                   .then(() => {
@@ -92,36 +95,41 @@ const ExperienceForm = () => {
                   });
               }}
             >
+              <label>Name</label>
               <input
                 type="text"
                 ref={node => {
                   nameInput = node;
                 }}
               />
+              <label>Location</label>
               <input
                 type="text"
                 ref={node => {
                   locationInput = node;
                 }}
               />
+              <label>Length</label>
               <input
                 type="text"
                 ref={node => {
                   lengthInput = node;
                 }}
               />
+              <label>Language</label>
               <input
                 type="text"
                 ref={node => {
                   languageInput = node;
                 }}
               />
-              <input
-                type="text"
+              <label>Description</label>
+              <textarea
                 ref={node => {
                   descriptionInput = node;
                 }}
               />
+              <label>Featured</label>
               <input
                 type="checkbox"
                 ref={node => {
@@ -129,16 +137,25 @@ const ExperienceForm = () => {
                 }}
                 value="1"
               />
+              <label>What is included</label>
               <input
                 type="text"
                 ref={node => {
                   includesInput = node;
                 }}
               />
+              <label>What to bring</label>
               <input
                 type="text"
                 ref={node => {
                   bringInput = node;
+                }}
+              />
+              <label>Slug</label>
+              <input
+                type="text"
+                ref={node => {
+                  slugInput = node;
                 }}
               />
               <button onClick={this.submitForm}>Submit</button>

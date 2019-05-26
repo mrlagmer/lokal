@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import { colors } from "./colors";
-import { fonts } from "./text/fonts";
-import Logo from "./Logo";
-import media from "./media";
-import { Button } from "./Button";
-import { common } from "./Common";
+import { colors } from "../colors";
+import { fonts } from "../text/fonts";
+import Logo from "../Logo";
+import media from "../media";
+import { Button } from "../Button";
+import { common } from "../Common";
 
 const StyledHeroHome = styled.section`
   background: linear-gradient(${colors.aqua[5]}, ${colors.teal[5]});
