@@ -1,5 +1,6 @@
 import { ApolloServer, gql } from "apollo-server-express";
 import { WebApp } from "meteor/webapp";
+import { getUser } from "meteor/apollo";
 import merge from "lodash/merge";
 
 import ExperiencesSchema from "../../api/experiences/experiences.graphql";
@@ -25,7 +26,10 @@ const resolvers = merge(resolver, ExperiencesResolvers);
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  context: async ({ req }) => ({
+    user: await getUser(req.headers.authorization)
+  })
 });
 
 server.applyMiddleware({

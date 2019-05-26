@@ -2,7 +2,8 @@ import Experiences from "./experiences";
 
 export default {
   Query: {
-    experiences() {
+    experiences(obj, args, context) {
+      console.log(context);
       return Experiences.find({}).fetch();
     }
   },

@@ -4,6 +4,7 @@ import { render } from "react-dom";
 import { ApolloProvider } from "react-apollo";
 import { ApolloClient } from "apollo-client";
 import { ApolloLink } from "apollo-link";
+import { MeteorAccountsLink } from "meteor/apollo";
 import { HttpLink } from "apollo-link-http";
 import { onError } from "apollo-link-error";
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -25,7 +26,9 @@ const httpLink = new HttpLink({
   uri: Meteor.absoluteUrl("graphql")
 });
 
-const link = ApolloLink.from([errorLink, httpLink]);
+const authLink = new MeteorAccountsLink();
+
+const link = ApolloLink.from([authLink, errorLink, httpLink]);
 
 const cache = new InMemoryCache();
 
