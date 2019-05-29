@@ -19,6 +19,7 @@ export default class LoginForm extends React.Component {
         <input type="email" ref={input => (this.email = input)} />
         <input type="password" ref={input => (this.password = input)} />
         <button type="submit">Login User</button>
+        <button onClick={() => Meteor.logout()}>LogOut</button>
       </form>
     );
   }
