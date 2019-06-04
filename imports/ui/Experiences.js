@@ -24,6 +24,7 @@ const ExperiencesDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  ${media.tablet`justify-content: center;`}
 `;
 
 const EXPERIENCESQUERY = gql`
@@ -34,7 +35,7 @@ const EXPERIENCESQUERY = gql`
       name
       location
       cost
-      slug
+      imagesFolder
     }
   }
 `;
@@ -79,7 +80,7 @@ const App = () => (
                     location={experience.location}
                     title={experience.name}
                     price={experience.cost}
-                    slug={experience.slug}
+                    slug={experience.imagesFolder}
                   />
                 ))}
               </ExperiencesDiv>

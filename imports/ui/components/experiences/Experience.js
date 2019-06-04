@@ -21,16 +21,24 @@ const Title = styled.p`
   font-weight: bold;
 `;
 
+const formatCurrency = num => {
+  const dollars = num / 100;
+  return dollars.toLocaleString("au-AU", {
+    style: "currency",
+    currency: "AUD"
+  });
+};
+
 const Experience = props => (
   <ExperienceDiv>
     <ExperienceImageDiv>
       <img src={`images/${props.slug}/listing.jpg`} />
     </ExperienceImageDiv>
     <Text>
-      {props.type} <i class="fas fa-circle fa-xs" /> {props.location}
+      {props.type} <i className="fas fa-circle fa-xs" /> {props.location}
     </Text>
     <Title>{props.title}</Title>
-    <Text>{props.price}</Text>
+    <Text>{formatCurrency(props.price)}</Text>
   </ExperienceDiv>
 );
 

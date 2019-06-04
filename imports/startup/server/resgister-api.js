@@ -1,11 +1,11 @@
-import { ApolloServer, gql } from "apollo-server-express";
+import { ApolloServer, AuthenticationError, gql } from "apollo-server-express";
 import { WebApp } from "meteor/webapp";
 import { getUser } from "meteor/apollo";
 import merge from "lodash/merge";
 
 import ExperiencesSchema from "../../api/experiences/experiences.graphql";
 import ExperiencesResolvers from "../../api/experiences/resolvers";
-//hiii manyuiuty sdfff
+//hiii manyuiuty sdfffryy
 const q = `
 type Query {
     hi: String

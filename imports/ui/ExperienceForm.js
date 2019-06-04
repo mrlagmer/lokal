@@ -14,7 +14,9 @@ const createExperience = gql`
     $featured: Boolean!
     $includes: String
     $bring: String
-    $slug: String
+    $imagesFolder: String
+    $type: String
+    $cost: Int
   ) {
     createExperience(
       name: $name
@@ -25,7 +27,9 @@ const createExperience = gql`
       featured: $featured
       includes: $includes
       bring: $bring
-      slug: $slug
+      imagesFolder: $imagesFolder
+      type: $type
+      cost: $cost
     ) {
       _id
       name
@@ -36,7 +40,9 @@ const createExperience = gql`
       featured
       includes
       bring
-      slug
+      imagesFolder
+      type
+      cost
     }
   }
 `;
@@ -53,16 +59,18 @@ const ExperiencesQuery = gql`
       featured
       includes
       bring
-      slug
+      imagesFolder
+      type
+      cost
     }
   }
 `;
 
 const ExperienceForm = () => {
-  const user = useUser();
+  const { user } = useUser();
   return (
     <React.Fragment>
-      {user ? (
+      {user.admin ? (
         <Mutation
           mutation={createExperience}
           update={(cache, { data: { createExperience } }) => {
@@ -90,7 +98,9 @@ const ExperienceForm = () => {
                       featured: featuredInput.value == "1" ? true : false,
                       includes: includesInput.value,
                       bring: bringInput.value,
-                      slug: slugInput.value
+                      imagesFolder: slugInput.value,
+                      type: typeInput.value,
+                      cost: Number(costInput.value)
                     }
                   })
                     .then(() => {
@@ -157,11 +167,25 @@ const ExperienceForm = () => {
                     bringInput = node;
                   }}
                 />
-                <label>Slug</label>
+                <label>Image Folder</label>
                 <input
                   type="text"
                   ref={node => {
                     slugInput = node;
+                  }}
+                />
+                <label>Type</label>
+                <input
+                  type="text"
+                  ref={node => {
+                    typeInput = node;
+                  }}
+                />
+                <label>Cost</label>
+                <input
+                  type="number"
+                  ref={node => {
+                    costInput = node;
                   }}
                 />
                 <button onClick={this.submitForm}>Submit</button>

@@ -12,9 +12,9 @@ type Experience {
   description: String!
   bring: String
   featured: Boolean!
-  slug: String
+  imagesFolder: String
   type: String
-  cost: String
+  cost: Int
 }
 
 type Mutation {
@@ -27,9 +27,9 @@ type Mutation {
     featured: Boolean!
     includes: String
     bring: String
-    slug: String
+    imagesFolder: String
     type: String
-    cost: String
+    cost: Int
   ): Experience
   deleteExperience(_id: String!): Experience
 }
