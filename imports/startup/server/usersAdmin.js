@@ -4,7 +4,7 @@ Meteor.startup(function() {
   if (!Accounts.findUserByEmail("stu@lokal.ly")) {
     var id = Accounts.createUser({
       email: "stu@lokal.ly",
-      password: "Lagmer15",
+      password: "Z4LaGTAJOGFh&1+Q$[4D",
       profile: { username: "mrlagmer" },
       profile: { name: "Stuart" }
     });
