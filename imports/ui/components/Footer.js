@@ -87,10 +87,10 @@ const Footer = () => (
         </p>
         <SocialDiv>
           <SocialLink href="https://www.facebook.com/explore.lokally/">
-            <i class="fab fa-facebook-f fa-lg" />
+            <i className="fab fa-facebook-f fa-lg" />
           </SocialLink>
           <SocialLink href="https://www.instagram.com/explore.lokally/">
-            <i class="fab fa-instagram fa-lg" />
+            <i className="fab fa-instagram fa-lg" />
           </SocialLink>
         </SocialDiv>
       </FooterTagLine>

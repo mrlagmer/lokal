@@ -1,16 +1,46 @@
+import { AuthenticationError } from "apollo-server-express";
+
 import Experiences from "./experiences";
 
 export default {
   Query: {
-    experiences() {
+    experiences(obj, args, context) {
       return Experiences.find({}).fetch();
     }
   },
 
   Mutation: {
-    createExperience(obj, { name }, context) {
+    createExperience(
+      obj,
+      {
+        name,
+        location,
+        length,
+        language,
+        description,
+        featured,
+        includes,
+        bring,
+        imagesFolder,
+        type,
+        cost
+      },
+      context
+    ) {
+      if (!Roles.userIsInRole(context.user._id, ["admin"], "default-group"))
+        throw new AuthenticationError("not admin");
       const experienceId = Experiences.insert({
-        name
+        name,
+        location,
+        length,
+        language,
+        description,
+        featured,
+        includes,
+        bring,
+        imagesFolder,
+        type,
+        cost
       });
       return Experiences.findOne(experienceId);
     },

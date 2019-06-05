@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-import { colors } from "./colors";
-import { fonts } from "./text/fonts";
-import Input from "./Input";
-import { ArrowButton } from "./Button";
-import media from "./media";
-import { common } from "./Common";
+import { colors } from "../colors";
+import { fonts } from "../text/fonts";
+import Input from "../Input";
+import { ArrowButton } from "../Button";
+import media from "../media";
+import { common } from "../Common";
 
 const StyledEmailForm = styled.section`
   display: flex;

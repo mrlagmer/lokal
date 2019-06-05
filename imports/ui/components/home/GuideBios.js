@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import media from "./media";
-import { colors } from "./colors";
-import { fonts } from "./text/fonts";
+import media from "../media";
+import { colors } from "../colors";
+import { fonts } from "../text/fonts";
 
 const StyledGuidesDiv = styled.div`
   padding-left: 3rem;

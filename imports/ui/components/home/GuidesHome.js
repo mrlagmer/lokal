@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Button } from "./Button";
-import media from "./media";
-import { common } from "./Common";
-import { colors } from "./colors";
+import { Button } from "../Button";
+import media from "../media";
+import { common } from "../Common";
+import { colors } from "../colors";
 
 import { GuidePat, GuideVenji, GuideMallet } from "./GuideBios";
 
