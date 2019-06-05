@@ -23,8 +23,6 @@ export const RenderRoutes = () => (
       <Route exact path="/" component={AppContainer} />
       <Route exact path="/experience" component={ExperienceForm} />
       <Route exact path="/experiences" component={Experiences} />
-      <Route exact path="/signin" component={AuthPageSignIn} />
-      <Route exact path="/join" component={AuthPageJoin} />
       <Route
         exact
         path="/about"

@@ -38,7 +38,6 @@ const Experience = props => (
       {props.type} <i className="fas fa-circle fa-xs" /> {props.location}
     </Text>
     <Title>{props.title}</Title>
-    <Text>{formatCurrency(props.price)}</Text>
   </ExperienceDiv>
 );
 
