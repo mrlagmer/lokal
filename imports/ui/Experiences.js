@@ -48,6 +48,10 @@ const App = () => (
         name="description"
         content="Explore like a lokal. Connect to the very best local culture has to offer. Eat, drink and adventure through our curated experiences with the expertise of local guides."
       />
+      <meta
+        name="google-site-verification"
+        content="YFqpA1nuLgL3D1QFnhVy05b5dOtAKwwkdmcs5EF6I9o"
+      />
       <title>
         Explore Manila Tours, Team Building & Things To Do | Explore Lokal.ly
       </title>
