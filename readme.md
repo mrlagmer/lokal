@@ -11,3 +11,11 @@ meteor --settings development.json
 ```
 nodechef deploy -meteorsettings production.json
 ```
+
+## Deploy staic assets
+
+cd into the public folder in your local.
+
+```
+nodechef deploy -i lokal --statics
+```
