@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const ExperienceDiv = styled.div`
   width: 321px;
+  margin-top: 1rem;
 `;
 
 const ExperienceImageDiv = styled.div`
@@ -32,7 +33,9 @@ const formatCurrency = num => {
 const Experience = props => (
   <ExperienceDiv>
     <ExperienceImageDiv>
-      <img src={`images/${props.slug}/listing.jpg`} />
+      <div>
+        <img src={`images/${props.slug}/listing.jpg`} />
+      </div>
     </ExperienceImageDiv>
     <Text>
       {props.type} <i className="fas fa-circle fa-xs" /> {props.location}
