@@ -5,24 +5,11 @@ import merge from "lodash/merge";
 
 import ExperiencesSchema from "../../api/experiences/experiences.graphql";
 import ExperiencesResolvers from "../../api/experiences/resolvers";
-//hiii manyuiuty sdfffryy
-const q = `
-type Query {
-    hi: String
-    experiences: [Experience]
-}
-`;
-const typeDefs = [q, ExperiencesSchema];
+//hiii manyuiuty sdfffryytyuoopomi
 
-const resolver = {
-  Query: {
-    hi() {
-      return "Hello Parnell";
-    }
-  }
-};
+const typeDefs = [ExperiencesSchema];
 
-const resolvers = merge(resolver, ExperiencesResolvers);
+const resolvers = merge(ExperiencesResolvers);
 
 const server = new ApolloServer({
   typeDefs,

@@ -17,6 +17,11 @@ type Experience {
   cost: Int
 }
 
+type Query {
+  experiences: [Experience]
+  experience(_id: String!): Experience
+}
+
 type Mutation {
   createExperience(
     name: String!

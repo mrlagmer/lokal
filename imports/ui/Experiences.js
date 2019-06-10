@@ -27,6 +27,11 @@ const ExperiencesDiv = styled.div`
   ${media.tablet`justify-content: center;`}
 `;
 
+const ExperienceLink = styled.a`
+  text-decoration: none;
+  color: initial;
+`;
+
 const EXPERIENCESQUERY = gql`
   {
     experiences {
@@ -78,14 +83,16 @@ const App = () => (
               <Header2>Experiences</Header2>
               <ExperiencesDiv>
                 {data.experiences.map(experience => (
-                  <Experience
-                    key={experience._id}
-                    type={experience.type}
-                    location={experience.location}
-                    title={experience.name}
-                    price={experience.cost}
-                    slug={experience.imagesFolder}
-                  />
+                  <ExperienceLink href={`/experience/${experience._id}`}>
+                    <Experience
+                      key={experience._id}
+                      type={experience.type}
+                      location={experience.location}
+                      title={experience.name}
+                      price={experience.cost}
+                      slug={experience.imagesFolder}
+                    />
+                  </ExperienceLink>
                 ))}
               </ExperiencesDiv>
             </ExperiencesSection>

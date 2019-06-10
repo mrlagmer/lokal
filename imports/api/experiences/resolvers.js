@@ -5,7 +5,10 @@ import Experiences from "./experiences";
 export default {
   Query: {
     experiences(obj, args, context) {
-      return Experiences.find({}).fetch();
+      return Experiences.find(args).fetch();
+    },
+    experience(obj, args, context) {
+      return Experiences.findOne(args);
     }
   },
 
