@@ -5,6 +5,8 @@ import Logo from "./Logo";
 import { colors } from "./colors";
 
 const StyledLogo = styled.div`
+  position: relative;
+  z-index: 1;
   margin-top: 2rem;
 `;
 

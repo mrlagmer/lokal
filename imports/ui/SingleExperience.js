@@ -8,11 +8,19 @@ import Footer from "./components/Footer";
 import GlobalStyle from "./components/GlobalStyle";
 import { Main, AppDiv } from "./components/Main";
 import LokalHead from "./components/LokalHead";
-import { Header2 } from "./components/text/Header2";
-import Experience from "./components/experiences/Experience";
-import media from "./components/media";
+import ExperienceHeader from "./components/experiences/ExperienceHeader";
 
 import { googleAnalyticsId } from "./tools/General";
+
+const ExperienceSection = styled.section`
+  background-color: white;
+  position: relative;
+  margin-top: -80px;
+  max-width: 900px;
+  margin-left: 4rem;
+  margin-right: auto;
+  padding: 2rem;
+`;
 
 const EXPERIENCEQUERY = gql`
   query Experience($id: String!) {
@@ -62,7 +70,14 @@ const SingleExperience = props => {
           {({ loading, error, data }) => {
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error :(</p>;
-            return <h1>{data.experience.name}</h1>;
+            return (
+              <React.Fragment>
+                <ExperienceHeader imageFolder={data.experience.imagesFolder} />
+                <ExperienceSection>
+                  <h1>{data.experience.name}</h1>
+                </ExperienceSection>
+              </React.Fragment>
+            );
           }}
         </Query>
       </Main>
