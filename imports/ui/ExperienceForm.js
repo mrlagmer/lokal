@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
+import styled from "styled-components";
 
 import useUser from "./hooks/useUser";
+
+const FormDiv = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
 
 const createExperience = gql`
   mutation createExperience(
@@ -17,6 +23,10 @@ const createExperience = gql`
     $imagesFolder: String
     $type: String
     $cost: Int
+    $bookingId: Int
+    $guideId: String
+    $times: String
+    $takingBookings: Boolean
   ) {
     createExperience(
       name: $name
@@ -30,6 +40,10 @@ const createExperience = gql`
       imagesFolder: $imagesFolder
       type: $type
       cost: $cost
+      bookingId: $bookingId
+      guideId: $guideId
+      times: $times
+      takingBookings: $takingBookings
     ) {
       _id
       name
@@ -43,6 +57,10 @@ const createExperience = gql`
       imagesFolder
       type
       cost
+      bookingId
+      guideId
+      times
+      takingBookings
     }
   }
 `;
@@ -62,11 +80,15 @@ const ExperiencesQuery = gql`
       imagesFolder
       type
       cost
+      bookingId
+      guideId
+      times
+      takingBookings
     }
   }
 `;
 
-const ExperienceForm = () => {
+const ExperienceForm = props => {
   const { user } = useUser();
   return (
     <React.Fragment>
@@ -79,118 +101,152 @@ const ExperienceForm = () => {
             });
             cache.writeQuery({
               query: ExperiencesQuery,
-              data: { experiences: experiences.concat([createExperience]) }
+              data: {
+                experiences: experiences.concat([createExperience])
+              }
             });
           }}
         >
           {(createExperience, { data }) => (
-            <div>
-              <form
-                onSubmit={e => {
-                  e.preventDefault();
-                  createExperience({
-                    variables: {
-                      name: nameInput.value,
-                      location: locationInput.value,
-                      length: lengthInput.value,
-                      language: languageInput.value,
-                      description: descriptionInput.value,
-                      featured: featuredInput.value == "1" ? true : false,
-                      includes: includesInput.value,
-                      bring: bringInput.value,
-                      imagesFolder: slugInput.value,
-                      type: typeInput.value,
-                      cost: Number(costInput.value)
-                    }
+            <FormDiv
+              onSubmit={e => {
+                e.preventDefault();
+                createExperience({
+                  variables: {
+                    name: nameInput.value,
+                    location: locationInput.value,
+                    length: lengthInput.value,
+                    language: languageInput.value,
+                    description: descriptionInput.value,
+                    featured: featuredInput.value == "1" ? true : false,
+                    includes: includesInput.value,
+                    bring: bringInput.value,
+                    imagesFolder: slugInput.value,
+                    type: typeInput.value,
+                    cost: Number(costInput.value),
+                    bookingId: Number(bookingIdInput.value),
+                    guideId: guideIdInput.value,
+                    times: timesInput.value,
+                    takingBookings:
+                      takingBookingsInput.value == "1" ? true : false
+                  }
+                })
+                  .then(() => {
+                    nameInput.value = "";
                   })
-                    .then(() => {
-                      nameInput.value = "";
-                    })
-                    .catch(error => {
-                      console.log(error);
-                    });
+                  .catch(error => {
+                    console.log(error);
+                  });
+              }}
+            >
+              <label>Name</label>
+              <input
+                type="text"
+                ref={node => {
+                  nameInput = node;
                 }}
-              >
-                <label>Name</label>
-                <input
-                  type="text"
-                  ref={node => {
-                    nameInput = node;
-                  }}
-                />
-                <label>Location</label>
-                <input
-                  type="text"
-                  ref={node => {
-                    locationInput = node;
-                  }}
-                />
-                <label>Length</label>
-                <input
-                  type="text"
-                  ref={node => {
-                    lengthInput = node;
-                  }}
-                />
-                <label>Language</label>
-                <input
-                  type="text"
-                  ref={node => {
-                    languageInput = node;
-                  }}
-                />
-                <label>Description</label>
-                <textarea
-                  ref={node => {
-                    descriptionInput = node;
-                  }}
-                />
-                <label>Featured</label>
-                <input
-                  type="checkbox"
-                  ref={node => {
-                    featuredInput = node;
-                  }}
-                  value="1"
-                />
-                <label>What is included</label>
-                <input
-                  type="text"
-                  ref={node => {
-                    includesInput = node;
-                  }}
-                />
-                <label>What to bring</label>
-                <input
-                  type="text"
-                  ref={node => {
-                    bringInput = node;
-                  }}
-                />
-                <label>Image Folder</label>
-                <input
-                  type="text"
-                  ref={node => {
-                    slugInput = node;
-                  }}
-                />
-                <label>Type</label>
-                <input
-                  type="text"
-                  ref={node => {
-                    typeInput = node;
-                  }}
-                />
-                <label>Cost</label>
-                <input
-                  type="number"
-                  ref={node => {
-                    costInput = node;
-                  }}
-                />
-                <button onClick={this.submitForm}>Submit</button>
-              </form>
-            </div>
+              />
+              <label>Location</label>
+              <input
+                type="text"
+                ref={node => {
+                  locationInput = node;
+                }}
+              />
+              <label>Length</label>
+              <input
+                type="text"
+                ref={node => {
+                  lengthInput = node;
+                }}
+              />
+              <label>Language</label>
+              <input
+                type="text"
+                ref={node => {
+                  languageInput = node;
+                }}
+              />
+              <label>Description</label>
+              <textarea
+                ref={node => {
+                  descriptionInput = node;
+                }}
+              />
+              <label>Featured</label>
+              <input
+                type="checkbox"
+                ref={node => {
+                  featuredInput = node;
+                }}
+                value="1"
+              />
+              <label>What is included</label>
+              <input
+                type="text"
+                ref={node => {
+                  includesInput = node;
+                }}
+              />
+              <label>What to bring</label>
+              <input
+                type="text"
+                ref={node => {
+                  bringInput = node;
+                }}
+              />
+              <label>Image Folder</label>
+              <input
+                type="text"
+                ref={node => {
+                  slugInput = node;
+                }}
+              />
+              <label>Type</label>
+              <input
+                type="text"
+                ref={node => {
+                  typeInput = node;
+                }}
+              />
+              <label>Cost</label>
+              <input
+                type="number"
+                ref={node => {
+                  costInput = node;
+                }}
+              />
+              <label>Booking ID</label>
+              <input
+                type="number"
+                ref={node => {
+                  bookingIdInput = node;
+                }}
+              />
+              <label>Guide ID</label>
+              <input
+                type="text"
+                ref={node => {
+                  guideIdInput = node;
+                }}
+              />
+              <label>Times</label>
+              <input
+                type="text"
+                ref={node => {
+                  timesInput = node;
+                }}
+              />
+              <label>Taking Bookings</label>
+              <input
+                type="checkbox"
+                ref={node => {
+                  takingBookingsInput = node;
+                }}
+                value="1"
+              />
+              <button onClick={this.submitForm}>Submit</button>
+            </FormDiv>
           )}
         </Mutation>
       ) : (

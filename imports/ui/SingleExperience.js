@@ -9,10 +9,15 @@ import GlobalStyle from "./components/GlobalStyle";
 import { Main, AppDiv } from "./components/Main";
 import LokalHead from "./components/LokalHead";
 import ExperienceHeader from "./components/experiences/ExperienceHeader";
+import KeyInfo from "./components/experiences/KeyInfo";
+import { fonts } from "./components/text/fonts";
+import { Header2 } from "./components/text/Header2";
+import { HrGradient } from "./components/tags";
+import Booking from "./components/experiences/Booking";
 
 import { googleAnalyticsId } from "./tools/General";
 
-const ExperienceSection = styled.section`
+const ExperienceSection = styled.article`
   background-color: white;
   position: relative;
   margin-top: -80px;
@@ -22,6 +27,17 @@ const ExperienceSection = styled.section`
   padding: 2rem;
 `;
 
+const ExperienceH1 = styled.h1`
+  font-size: 2.5rem;
+`;
+
+const ContentDiv = styled.div`
+  line-height: ${fonts.lineHeightPages};
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+`;
+
 const EXPERIENCEQUERY = gql`
   query Experience($id: String!) {
     experience(_id: $id) {
@@ -29,8 +45,17 @@ const EXPERIENCEQUERY = gql`
       type
       name
       location
+      length
+      includes
+      language
       cost
       imagesFolder
+      description
+      bring
+      times
+      guide {
+        bio
+      }
     }
   }
 `;
@@ -64,7 +89,12 @@ const SingleExperience = props => {
         </script>
       </Helmet>
       <GlobalStyle />
-      <Main>
+      <Main
+        css={`
+          max-width: 1300px;
+          margin: 0 auto;
+        `}
+      >
         <LokalHead />
         <Query query={EXPERIENCEQUERY} variables={{ id }}>
           {({ loading, error, data }) => {
@@ -74,7 +104,34 @@ const SingleExperience = props => {
               <React.Fragment>
                 <ExperienceHeader imageFolder={data.experience.imagesFolder} />
                 <ExperienceSection>
-                  <h1>{data.experience.name}</h1>
+                  <ExperienceH1>{data.experience.name}</ExperienceH1>
+                  <KeyInfo
+                    location={data.experience.location}
+                    length={data.experience.length}
+                    includes={data.experience.includes}
+                    language={data.experience.language}
+                  />
+                  <Booking available={data.experience.times} />
+                  <ContentDiv>
+                    <Header2>Meet Your Guide</Header2>
+                    <p>{data.experience.guide.bio}</p>
+                  </ContentDiv>
+                  <HrGradient />
+                  <ContentDiv>
+                    <Header2>The Experience</Header2>
+                    <p>{data.experience.description}</p>
+                  </ContentDiv>
+                  <HrGradient />
+                  <ContentDiv>
+                    <Header2>Provided for you</Header2>
+                    <p>{data.experience.includes}</p>
+                  </ContentDiv>
+                  <HrGradient />
+                  <ContentDiv>
+                    <Header2>What to Bring</Header2>
+                    <p>{data.experience.bring}</p>
+                  </ContentDiv>
+                  <HrGradient />
                 </ExperienceSection>
               </React.Fragment>
             );

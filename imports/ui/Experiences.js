@@ -11,6 +11,7 @@ import LokalHead from "./components/LokalHead";
 import { Header2 } from "./components/text/Header2";
 import Experience from "./components/experiences/Experience";
 import media from "./components/media";
+import { ExperienceLink } from "./components/tags/";
 
 import { googleAnalyticsId } from "./tools/General";
 
@@ -25,11 +26,6 @@ const ExperiencesDiv = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   ${media.tablet`justify-content: center;`}
-`;
-
-const ExperienceLink = styled.a`
-  text-decoration: none;
-  color: initial;
 `;
 
 const EXPERIENCESQUERY = gql`
@@ -83,9 +79,11 @@ const App = () => (
               <Header2>Experiences</Header2>
               <ExperiencesDiv>
                 {data.experiences.map(experience => (
-                  <ExperienceLink href={`/experience/${experience._id}`}>
+                  <ExperienceLink
+                    key={experience._id}
+                    href={`/experience/${experience._id}`}
+                  >
                     <Experience
-                      key={experience._id}
                       type={experience.type}
                       location={experience.location}
                       title={experience.name}

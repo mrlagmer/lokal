@@ -10,6 +10,16 @@ const ImageMain = styled.div`
   margin-top: -130px;
 `;
 
+const SecondImageDiv = styled.div`
+  align-self: end;
+`;
+
+const ImageSecond = styled.img`
+  max-height: 545px;
+  margin-left: 1rem;
+  align-self: end;
+`;
+
 const ExperienceHeader = props => {
   const { imageFolder } = props;
   return (
@@ -17,9 +27,9 @@ const ExperienceHeader = props => {
       <ImageMain>
         <img src={`/images/${imageFolder}/1.jpg`} />
       </ImageMain>
-      <div>
-        <img src={`/images/${imageFolder}/2.jpg`} />
-      </div>
+      <SecondImageDiv>
+        <ImageSecond src={`/images/${imageFolder}/2.jpg`} />
+      </SecondImageDiv>
     </ImageDiv>
   );
 };

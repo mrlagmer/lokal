@@ -1,0 +1,14 @@
+# name
+# createdAt
+# [guideId]
+
+type Guide {
+  _id: String!
+  name: String!
+  bio: String
+}
+
+# type Query {
+#   guides: [Guide]
+#   guide(_id: String!): Guide
+# }
