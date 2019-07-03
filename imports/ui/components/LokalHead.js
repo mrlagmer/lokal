@@ -117,6 +117,18 @@ const MenuItems = styled.a`
   }
 `;
 
+const SocialDiv = styled.div`
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+`;
+
+const SocialLink = styled.a`
+  font-size: 1rem;
+  margin-right: 1.5rem;
+  color: white;
+`;
+
 const LokalHead = () => (
   <React.Fragment>
     <StyledLogo>
@@ -130,21 +142,26 @@ const LokalHead = () => (
           <MenuToggleSpan />
           <MenuToggleSpan />
           <Menu>
-            <MenuItems href="#">
-              <li>Home</li>
+            <MenuItems href="/experiences">
+              <li>Experiences</li>
             </MenuItems>
-            <MenuItems href="#">
-              <li>About</li>
+            <MenuItems href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform">
+              <li>Become a Guide</li>
             </MenuItems>
-            <MenuItems href="#">
-              <li>Info</li>
+            <MenuItems href="/about">
+              <li>About Us</li>
             </MenuItems>
-            <MenuItems href="#">
+            <MenuItems href="https://docs.google.com/forms/d/1eX5NLRbe3_d1W-I-HJrCPhMJo_Q_9QMdjpyCzahA7mc/viewform">
               <li>Contact</li>
             </MenuItems>
-            <MenuItems href="https://erikterwan.com/" target="_blank">
-              <li>Show me more</li>
-            </MenuItems>
+            <SocialDiv>
+              <SocialLink href="https://www.facebook.com/explore.lokally/">
+                <i className="fab fa-facebook-f fa-lg" />
+              </SocialLink>
+              <SocialLink href="https://www.instagram.com/explore.lokally/">
+                <i className="fab fa-instagram fa-lg" />
+              </SocialLink>
+            </SocialDiv>
           </Menu>
         </MenuToggle>
       </Nav>

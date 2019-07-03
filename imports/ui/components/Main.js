@@ -21,7 +21,7 @@ const HeadGradient = styled.div`
 
 export const AppDiv = props => (
   <StyledAppDiv>
-    <HeadGradient />
+    {props.url !== "/" && <HeadGradient />}
     {props.children}
   </StyledAppDiv>
 );

@@ -11,8 +11,8 @@ import EmailForm from "./components/home/EmailForm";
 import { googleAnalyticsId } from "./tools/General";
 import Featured from "./components/home/Featured";
 
-const App = () => (
-  <AppDiv>
+const App = props => (
+  <AppDiv url={props.location.pathname}>
     <Helmet>
       <meta charSet="utf-8" />
       <meta
