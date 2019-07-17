@@ -23,12 +23,15 @@ const FeaturedH1 = styled.h1`
 const FeaturedDiv = styled.div`
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   ${media.tablet`align-items: center;`}
   ${media.tablet`flex-direction: column;`}
 `;
 
 const FeaturedExperienceLink = styled(ExperienceLink)`
   margin-top: -80px;
+  margin-bottom: 6rem;
+  ${media.tablet`margin-bottom:0`}
   :nth-child(even) {
     margin-top: -140px;
     ${media.tablet`margin-top: 1rem;`}

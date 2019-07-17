@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import media from "../media";
+
 const ImageDiv = styled.div`
   display: flex;
 `;
@@ -8,10 +10,13 @@ const ImageDiv = styled.div`
 const ImageMain = styled.div`
   flex-shrink: 0;
   margin-top: -130px;
+  ${media.desktop`flex-shrink:1;`}
 `;
 
 const SecondImageDiv = styled.div`
+  overflow: hidden;
   align-self: end;
+  ${media.desktop`display: none;`}
 `;
 
 const ImageSecond = styled.img`

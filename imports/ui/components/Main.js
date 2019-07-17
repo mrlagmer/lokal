@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
+import media from "./media";
+
 import { colors } from "./colors";
 
 export const Main = styled.main`
   flex-grow: 1;
+  ${media.phone`width: 100%`}
 `;
 
 export const StyledAppDiv = styled.div`

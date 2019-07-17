@@ -16,6 +16,7 @@ import { HrGradient } from "./components/tags";
 import Booking from "./components/experiences/Booking";
 
 import { googleAnalyticsId } from "./tools/General";
+import media from "./components/media";
 
 const ExperienceSection = styled.article`
   background-color: white;
@@ -25,6 +26,10 @@ const ExperienceSection = styled.article`
   margin-left: 4rem;
   margin-right: auto;
   padding: 2rem;
+  ${media.desktop`margin-left: 4rem ;`}
+  ${media.desktop`margin-right: 4rem ;`}
+  ${media.phone`margin-left: 1rem ;`}
+  ${media.phone`margin-right: 1rem ;`}
 `;
 
 const ExperienceH1 = styled.h1`
@@ -111,7 +116,7 @@ const SingleExperience = props => {
                     includes={data.experience.includes}
                     language={data.experience.language}
                   />
-                  <Booking available={data.experience.times} />
+                  <Booking available={data.experience.times} cost={data.experience.cost} />
                   <ContentDiv>
                     <Header2>Meet Your Guide</Header2>
                     <p>{data.experience.guide.bio}</p>

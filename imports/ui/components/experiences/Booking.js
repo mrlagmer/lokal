@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { colors } from "../colors";
 import { Button } from "../Button";
 import { Header2 } from "../text/Header2";
+import media from "../media";
+import { formatCurrency } from "../../tools/General";
 
 const BookingDiv = styled.div`
   display: flex;
@@ -13,6 +15,7 @@ const BookingDiv = styled.div`
   border-width: 2px;
   border-style: solid;
   border-image: linear-gradient(to right, ${colors.lg}) 10;
+  ${media.phone`flex-direction:column;`}
 `;
 
 const Booking = props => {
@@ -20,8 +23,17 @@ const Booking = props => {
     <div css="margin-top: 3rem">
       <Header2>Book this Experience</Header2>
       <BookingDiv>
-        <p css="font-size: 1rem;">{props.available}</p>
-        <Button>Book Now</Button>
+        <div>
+          <p css="font-size: 1rem;">{props.available}</p>
+          {props.cost > 0 && <p>{formatCurrency(props.cost)} Per Person</p>}
+        </div>
+        {props.takingBookings ? (
+          <Button>Book Now</Button>
+        ) : (
+          <Button as="a" href="mailto:help@lokal.ly">
+            Enquire Now
+          </Button>
+        )}
       </BookingDiv>
     </div>
   );
