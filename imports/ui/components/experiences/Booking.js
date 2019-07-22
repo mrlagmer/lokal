@@ -6,6 +6,7 @@ import { Button } from "../Button";
 import { Header2 } from "../text/Header2";
 import media from "../media";
 import { formatCurrency } from "../../tools/General";
+import EmbedBooking from "./EmbedBooking";
 
 const BookingDiv = styled.div`
   display: flex;
@@ -19,6 +20,7 @@ const BookingDiv = styled.div`
 `;
 
 const Booking = props => {
+  console.log(props);
   return (
     <div css="margin-top: 3rem">
       <Header2>Book this Experience</Header2>
@@ -28,7 +30,7 @@ const Booking = props => {
           {props.cost > 0 && <p>{formatCurrency(props.cost)} Per Person</p>}
         </div>
         {props.takingBookings ? (
-          <Button>Book Now</Button>
+          <EmbedBooking bookingId={props.bookingId} />
         ) : (
           <Button as="a" href="mailto:help@lokal.ly">
             Enquire Now

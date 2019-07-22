@@ -58,6 +58,8 @@ const EXPERIENCEQUERY = gql`
       description
       bring
       times
+      takingBookings
+      bookingId
       guide {
         bio
       }
@@ -116,7 +118,12 @@ const SingleExperience = props => {
                     includes={data.experience.includes}
                     language={data.experience.language}
                   />
-                  <Booking available={data.experience.times} cost={data.experience.cost} />
+                  <Booking
+                    available={data.experience.times}
+                    cost={data.experience.cost}
+                    takingBookings={data.experience.takingBookings}
+                    bookingId={data.experience.bookingId}
+                  />
                   <ContentDiv>
                     <Header2>Meet Your Guide</Header2>
                     <p>{data.experience.guide.bio}</p>
