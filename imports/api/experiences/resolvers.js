@@ -37,10 +37,11 @@ export default {
         imagesFolder,
         type,
         cost,
+        minBookings,
         bookingId,
         guideId,
         times,
-        takingBookings,
+        takingBookings
       },
       context
     ) {
@@ -58,6 +59,7 @@ export default {
         imagesFolder,
         type,
         cost,
+        minBookings,
         bookingId,
         guideId,
         times,
@@ -81,6 +83,7 @@ export default {
         imagesFolder,
         type,
         cost,
+        minBookings,
         bookingId,
         guideId,
         times,
@@ -102,6 +105,7 @@ export default {
         imagesFolder,
         type,
         cost,
+        minBookings,
         bookingId,
         guideId,
         times,

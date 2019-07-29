@@ -15,6 +15,7 @@ type Experience {
   imagesFolder: String
   type: String
   cost: Int
+  minBookings: Int
   bookingId: Int
   guideId: String
   times: String

@@ -15,6 +15,7 @@ type Mutation {
     imagesFolder: String
     type: String
     cost: Int
+    minBookings: Int
     bookingId: Int
     guideId: String
     times: String
@@ -33,6 +34,7 @@ type Mutation {
     imagesFolder: String
     type: String
     cost: Int
+    minBookings: Int
     bookingId: Int
     guideId: String
     times: String

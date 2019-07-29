@@ -23,6 +23,7 @@ const createExperience = gql`
     $imagesFolder: String
     $type: String
     $cost: Int
+    $minBookings: Int
     $bookingId: Int
     $guideId: String
     $times: String
@@ -40,6 +41,7 @@ const createExperience = gql`
       imagesFolder: $imagesFolder
       type: $type
       cost: $cost
+      minBookings: $minBookings
       bookingId: $bookingId
       guideId: $guideId
       times: $times
@@ -57,6 +59,7 @@ const createExperience = gql`
       imagesFolder
       type
       cost
+      minBookings
       bookingId
       guideId
       times
@@ -80,6 +83,7 @@ const ExperiencesQuery = gql`
       imagesFolder
       type
       cost
+      minBookings
       bookingId
       guideId
       times
@@ -124,6 +128,7 @@ const ExperienceForm = props => {
                     imagesFolder: slugInput.value,
                     type: typeInput.value,
                     cost: Number(costInput.value),
+                    minBookings: Number(minBookingInput.value),
                     bookingId: Number(bookingIdInput.value),
                     guideId: guideIdInput.value,
                     times: timesInput.value,
@@ -214,6 +219,13 @@ const ExperienceForm = props => {
                 type="number"
                 ref={node => {
                   costInput = node;
+                }}
+              />
+              <label>Minimum Bookings</label>
+              <input
+                type="number"
+                ref={node => {
+                  minBookingInput = node;
                 }}
               />
               <label>Booking ID</label>
