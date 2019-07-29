@@ -27,6 +27,7 @@ const BookingDivInfo = styled.div`
 
 const Booking = props => {
   const [pax, setPax] = useState(props.minBookings);
+  console.log(pax);
   return (
     <div css="margin-top: 3rem">
       <Header2>Book this Experience</Header2>
@@ -62,7 +63,7 @@ const Booking = props => {
             type="number"
             min={props.minBookings}
             max="10"
-            defaultValue={props.minBookings}
+            value={pax}
             onChange={event => setPax(event.target.value)}
           />
         </div>

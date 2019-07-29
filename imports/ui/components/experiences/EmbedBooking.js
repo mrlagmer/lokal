@@ -49,7 +49,7 @@ const EmbedBooking = props => {
         })
       );
     };
-  }, []);
+  }, [props.pax]);
 
   const bookMe = () => {
     bookingWidget.showPopupFrame("book");
