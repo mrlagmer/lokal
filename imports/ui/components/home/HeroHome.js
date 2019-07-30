@@ -61,6 +61,7 @@ const HeroDiv = styled.div`
 `;
 
 const HeroButtonDiv = styled.div`
+  margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 `;
 
@@ -81,13 +82,9 @@ const HeroHome = () => (
         adventure through our curated experiences with the expertise of lokal
         guides.
       </HeroP>
-      <HeroP>Want to become a guide?</HeroP>
       <HeroButtonDiv>
-        <Button
-          as="a"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform"
-        >
-          Apply Now
+        <Button as="a" href="/experiences">
+          View Experiences
         </Button>
       </HeroButtonDiv>
     </HeroDiv>

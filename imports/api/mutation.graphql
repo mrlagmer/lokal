@@ -1,0 +1,46 @@
+# mutation.graphql
+
+type Mutation {
+  createGuide(name: String!, bio: String): Guide
+  deleteGuide(_id: String!): Guide
+  createExperience(
+    name: String!
+    location: String!
+    length: String!
+    language: String!
+    description: String!
+    featured: Boolean!
+    includes: String
+    bring: String
+    imagesFolder: String
+    type: String
+    cost: Int
+    minBookings: Int
+    maxBookings: Int
+    bookingId: Int
+    guideId: String
+    times: String
+    takingBookings: Boolean
+  ): Experience
+  updateExperience(
+    _id: String!
+    name: String!
+    location: String!
+    length: String!
+    language: String!
+    description: String!
+    featured: Boolean!
+    includes: String
+    bring: String
+    imagesFolder: String
+    type: String
+    cost: Int
+    minBookings: Int
+    maxBookings: Int
+    bookingId: Int
+    guideId: String
+    times: String
+    takingBookings: Boolean
+  ): Experience
+  deleteExperience(_id: String!): Experience
+}

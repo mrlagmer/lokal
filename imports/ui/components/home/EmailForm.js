@@ -153,10 +153,10 @@ class EmailForm extends React.Component {
               )}
               <SocialDiv>
                 <SocialLink href="https://www.facebook.com/explore.lokally/">
-                  <i class="fab fa-facebook-f fa-lg" />
+                  <i className="fab fa-facebook-f fa-lg" />
                 </SocialLink>
                 <SocialLinkInsta href="https://www.instagram.com/explore.lokally/">
-                  <i class="fab fa-instagram fa-lg" />
+                  <i className="fab fa-instagram fa-lg" />
                 </SocialLinkInsta>
               </SocialDiv>
             </EmailFormElement>

@@ -5,6 +5,8 @@ import { createBrowserHistory } from "history";
 // route components
 import AppContainer from "../../ui/App.js";
 import ExperienceForm from "../../ui/ExperienceForm";
+import EditExperienceForm from "../../ui/EditExperienceAdmin"
+import SingleExperience from "../../ui/SingleExperience";
 import AuthPageSignIn from "../../ui/LoginForm";
 import AuthPageJoin from "../../ui/RegisterForm";
 import Experiences from "../../ui/Experiences";
@@ -14,6 +16,7 @@ import { privacy } from "../../ui/pages/Privacy";
 import { CancelText } from "../../ui/pages/Cancel";
 import { TandCText } from "../../ui/pages/TandC";
 import { CoDText } from "../../ui/pages/Cod";
+import GuideForm from "../../ui/GuideForm";
 
 const browserHistory = createBrowserHistory();
 
@@ -22,8 +25,11 @@ export const RenderRoutes = () => (
     <Switch>
       <Route exact path="/" component={AppContainer} />
       <Route exact path="/experience" component={ExperienceForm} />
+      <Route exact path="/experience/edit/:id" component={EditExperienceForm} />
+      <Route exact path="/addguide" component={GuideForm} />
       <Route exact path="/experiences" component={Experiences} />
       <Route exact path="/signin" component={AuthPageSignIn} />
+      <Route exact path="/experience/:id" component={SingleExperience} />
       <Route
         exact
         path="/about"

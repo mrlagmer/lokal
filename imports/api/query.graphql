@@ -1,0 +1,9 @@
+# query.graphql
+
+type Query {
+  experiences: [Experience]
+  experience(_id: String!): Experience
+  featured(featured: Boolean!): [Experience]
+  guides: [Guide]
+  guide(_id: String!): Guide
+}

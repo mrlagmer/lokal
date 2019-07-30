@@ -9,16 +9,20 @@ import HeroHome from "./components/home/HeroHome";
 import GuidesHome from "./components/home/GuidesHome";
 import EmailForm from "./components/home/EmailForm";
 import { googleAnalyticsId } from "./tools/General";
+import Featured from "./components/home/Featured";
 
-const App = () => (
-  <AppDiv>
+const App = props => (
+  <AppDiv url={props.location.pathname}>
     <Helmet>
       <meta charSet="utf-8" />
       <meta
         name="description"
         content="Explore like a lokal. Connect to the very best local culture has to offer. Eat, drink and adventure through our curated experiences with the expertise of local guides."
       />
-      <meta name="google-site-verification" content="YFqpA1nuLgL3D1QFnhVy05b5dOtAKwwkdmcs5EF6I9o" />
+      <meta
+        name="google-site-verification"
+        content="YFqpA1nuLgL3D1QFnhVy05b5dOtAKwwkdmcs5EF6I9o"
+      />
       <title>
         Explore Manila Tours, Team Building & Things To Do | Explore Lokal.ly
       </title>
@@ -42,6 +46,7 @@ const App = () => (
         href="https://docs.google.com/forms/d/e/1FAIpQLSdd6fVYwNETmMp01TQYbDq7QkZQ0BX9Ir2DbcFG8hFNVMisJQ/viewform"
         button_text="Inquire now"
       />
+      <Featured />
       <EmailForm />
       <GuidesHome />
       <HeaderSection

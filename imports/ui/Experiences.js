@@ -11,6 +11,7 @@ import LokalHead from "./components/LokalHead";
 import { Header2 } from "./components/text/Header2";
 import Experience from "./components/experiences/Experience";
 import media from "./components/media";
+import { ExperienceLink } from "./components/tags/";
 
 import { googleAnalyticsId } from "./tools/General";
 
@@ -78,14 +79,18 @@ const App = () => (
               <Header2>Experiences</Header2>
               <ExperiencesDiv>
                 {data.experiences.map(experience => (
-                  <Experience
+                  <ExperienceLink
                     key={experience._id}
-                    type={experience.type}
-                    location={experience.location}
-                    title={experience.name}
-                    price={experience.cost}
-                    slug={experience.imagesFolder}
-                  />
+                    href={`/experience/${experience._id}`}
+                  >
+                    <Experience
+                      type={experience.type}
+                      location={experience.location}
+                      title={experience.name}
+                      price={experience.cost}
+                      slug={experience.imagesFolder}
+                    />
+                  </ExperienceLink>
                 ))}
               </ExperiencesDiv>
             </ExperiencesSection>

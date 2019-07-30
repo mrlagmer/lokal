@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
+import { formatCurrency } from "../../tools/General";
+
 const ExperienceDiv = styled.div`
   width: 321px;
   margin-top: 1rem;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const ExperienceImageDiv = styled.div`
@@ -11,24 +14,19 @@ const ExperienceImageDiv = styled.div`
 `;
 
 const Text = styled.p`
+  padding-left: 1rem;
   font-size: 1rem;
   font-weight: 400;
   margin-top: 1rem;
 `;
 
 const Title = styled.p`
+  padding-left: 1rem;
+  padding-bottom: 1rem;
   margin-top: 1rem;
   font-size: 2rem;
   font-weight: bold;
 `;
-
-const formatCurrency = num => {
-  const dollars = num / 100;
-  return dollars.toLocaleString("au-AU", {
-    style: "currency",
-    currency: "AUD"
-  });
-};
 
 const Experience = props => (
   <ExperienceDiv>

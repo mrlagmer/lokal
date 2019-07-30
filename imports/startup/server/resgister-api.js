@@ -4,25 +4,18 @@ import { getUser } from "meteor/apollo";
 import merge from "lodash/merge";
 
 import ExperiencesSchema from "../../api/experiences/experiences.graphql";
+import GuidesSchema from "../../api/guides/guides.graphql";
 import ExperiencesResolvers from "../../api/experiences/resolvers";
-//hiii manyuiuty sdfffryy
-const q = `
-type Query {
-    hi: String
-    experiences: [Experience]
-}
-`;
-const typeDefs = [q, ExperiencesSchema];
+import GuiesResolvers from "../../api/guides/resolvers";
 
-const resolver = {
-  Query: {
-    hi() {
-      return "Hello Parnell";
-    }
-  }
-};
+import QuerySchema from "../../api/query.graphql";
+import MutationSchema from "../../api/mutation.graphql";
 
-const resolvers = merge(resolver, ExperiencesResolvers);
+//hiii manyuiuty sdfffryytyuoopomiuypoipiepp0rre
+
+const typeDefs = [ExperiencesSchema, GuidesSchema, QuerySchema, MutationSchema];
+
+const resolvers = merge(ExperiencesResolvers, GuiesResolvers);
 
 const server = new ApolloServer({
   typeDefs,
