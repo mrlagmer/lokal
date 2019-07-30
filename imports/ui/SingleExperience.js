@@ -55,6 +55,7 @@ const EXPERIENCEQUERY = gql`
       language
       cost
       minBookings
+      maxBookings
       imagesFolder
       description
       bring
@@ -125,6 +126,7 @@ const SingleExperience = props => {
                     takingBookings={data.experience.takingBookings}
                     bookingId={data.experience.bookingId}
                     minBookings={data.experience.minBookings}
+                    maxBookings={data.experience.maxBookings}
                   />
                   <ContentDiv>
                     <Header2>Meet Your Guide</Header2>

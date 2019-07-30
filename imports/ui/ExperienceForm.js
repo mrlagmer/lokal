@@ -24,6 +24,7 @@ const createExperience = gql`
     $type: String
     $cost: Int
     $minBookings: Int
+    $maxBookings: Int
     $bookingId: Int
     $guideId: String
     $times: String
@@ -42,6 +43,7 @@ const createExperience = gql`
       type: $type
       cost: $cost
       minBookings: $minBookings
+      maxBookings: $maxBookings
       bookingId: $bookingId
       guideId: $guideId
       times: $times
@@ -60,6 +62,7 @@ const createExperience = gql`
       type
       cost
       minBookings
+      maxBookings
       bookingId
       guideId
       times
@@ -84,6 +87,7 @@ const ExperiencesQuery = gql`
       type
       cost
       minBookings
+      maxBookings
       bookingId
       guideId
       times
@@ -129,6 +133,7 @@ const ExperienceForm = props => {
                     type: typeInput.value,
                     cost: Number(costInput.value),
                     minBookings: Number(minBookingInput.value),
+                    maxBookings: Number(maxBookingInput.value),
                     bookingId: Number(bookingIdInput.value),
                     guideId: guideIdInput.value,
                     times: timesInput.value,
@@ -226,6 +231,13 @@ const ExperienceForm = props => {
                 type="number"
                 ref={node => {
                   minBookingInput = node;
+                }}
+              />
+              <label>Maximum Bookings</label>
+              <input
+                type="number"
+                ref={node => {
+                  maxBookingInput = node;
                 }}
               />
               <label>Booking ID</label>

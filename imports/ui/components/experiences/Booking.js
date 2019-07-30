@@ -25,16 +25,25 @@ const BookingDivInfo = styled.div`
   ${media.phone`flex-direction:column;`}
 `;
 
+const CostDiv = styled.div`
+  ${media.phone`margin-bottom: 1rem;`}
+`;
+
+const MaxBookingDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  ${media.phone`display: block;`}
+`;
+
 const Booking = props => {
   const [pax, setPax] = useState(props.minBookings);
-  console.log(pax);
   return (
     <div css="margin-top: 3rem">
       <Header2>Book this Experience</Header2>
       <BookingDiv>
         <BookingDivInfo>
-          <div>
-            <p css="font-size: 1rem;">{props.available}</p>
+          <CostDiv>
+            <p css="font-size: 1rem; margin-bottom: 1rem">{props.available}</p>
             {props.cost > 0 && (
               <p>USD {formatCurrency(props.cost).us} Per Person</p>
             )}
@@ -44,7 +53,7 @@ const Booking = props => {
             {props.cost > 0 && (
               <p>~{formatCurrency(props.cost).ph} Per Person</p>
             )}
-          </div>
+          </CostDiv>
           {props.takingBookings ? (
             <EmbedBooking bookingId={props.bookingId} pax={pax} />
           ) : (
@@ -56,7 +65,10 @@ const Booking = props => {
         <p css="margin-top: 1rem;">
           Minimum Guests Per Booking: {props.minBookings}
         </p>
-        <div css="display: flex; justify-content: space-between;">
+        <p css="margin-top: 1rem;">
+          Maximum Guests Per Booking: {props.maxBookings}
+        </p>
+        <MaxBookingDiv>
           <p css="align-self: center; margin-right: 1rem;">Total Bookings:</p>
           <Input
             css="margin-top: 1rem; border-color: #b5b5b5;"
@@ -66,7 +78,7 @@ const Booking = props => {
             value={pax}
             onChange={event => setPax(event.target.value)}
           />
-        </div>
+        </MaxBookingDiv>
       </BookingDiv>
     </div>
   );

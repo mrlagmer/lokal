@@ -16,6 +16,7 @@ type Mutation {
     type: String
     cost: Int
     minBookings: Int
+    maxBookings: Int
     bookingId: Int
     guideId: String
     times: String
@@ -35,6 +36,7 @@ type Mutation {
     type: String
     cost: Int
     minBookings: Int
+    maxBookings: Int
     bookingId: Int
     guideId: String
     times: String
