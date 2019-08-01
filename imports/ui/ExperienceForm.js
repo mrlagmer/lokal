@@ -126,7 +126,7 @@ const ExperienceForm = props => {
                     length: lengthInput.value,
                     language: languageInput.value,
                     description: descriptionInput.value,
-                    featured: featuredInput.value == "1" ? true : false,
+                    featured: featuredInput.checked,
                     includes: includesInput.value,
                     bring: bringInput.value,
                     imagesFolder: slugInput.value,
@@ -137,8 +137,7 @@ const ExperienceForm = props => {
                     bookingId: Number(bookingIdInput.value),
                     guideId: guideIdInput.value,
                     times: timesInput.value,
-                    takingBookings:
-                      takingBookingsInput.value == "1" ? true : false
+                    takingBookings: takingBookingsInput.checked
                   }
                 })
                   .then(() => {

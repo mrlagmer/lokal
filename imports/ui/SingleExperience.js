@@ -127,6 +127,7 @@ const SingleExperience = props => {
                     bookingId={data.experience.bookingId}
                     minBookings={data.experience.minBookings}
                     maxBookings={data.experience.maxBookings}
+                    name={data.experience.name}
                   />
                   <ContentDiv>
                     <Header2>Meet Your Guide</Header2>
