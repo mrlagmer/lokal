@@ -5,6 +5,7 @@ import { formatCurrency } from "../../tools/General";
 
 const ExperienceDiv = styled.div`
   width: 321px;
+  min-height: 380px;
   margin-top: 1rem;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
 `;

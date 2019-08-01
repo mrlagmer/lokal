@@ -143,7 +143,7 @@ const EditExperienceForm = props => {
                           length: lengthInput.value,
                           language: languageInput.value,
                           description: descriptionInput.value,
-                          featured: featuredInput.value == "1" ? true : false,
+                          featured: featuredInput.checked,
                           includes: includesInput.value,
                           bring: bringInput.value,
                           imagesFolder: slugInput.value,
@@ -154,8 +154,7 @@ const EditExperienceForm = props => {
                           bookingId: Number(bookingIdInput.value),
                           guideId: guideIdInput.value,
                           times: timesInput.value,
-                          takingBookings:
-                            takingBookingsInput.value == "1" ? true : false
+                          takingBookings: takingBookingsInput.checked
                         }
                       })
                         .then(() => {})
@@ -209,7 +208,6 @@ const EditExperienceForm = props => {
                       ref={node => {
                         featuredInput = node;
                       }}
-                      value="1"
                       defaultChecked={featured}
                     />
                     <label>What is included</label>

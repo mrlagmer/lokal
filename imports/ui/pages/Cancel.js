@@ -20,5 +20,5 @@ Once a traveler has booked an experience the guide will be sent a confirmation e
 **Communicate quickly:** If you have to cancel then be sure to send a message across to the other party as soon as possible.
 
 **Last minute cancelations:** Last minute cancelations can happen for a number of reasons. Be sure to plan your day ahead to ensure that you can be at the meeting point on time.
-We’ve found that traffic is a major disruption. Be sure to account for traffic through the day! Lastkly, remember to *communicate* - communication is vital to ensuring that all parties are on the same pageon the day of a tour!
+We’ve found that traffic is a major disruption. Be sure to account for traffic through the day! Lastly, remember to *communicate* - communication is vital to ensuring that all parties are on the same page on the day of a tour!
 `;
