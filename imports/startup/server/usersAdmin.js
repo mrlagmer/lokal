@@ -10,4 +10,14 @@ Meteor.startup(function() {
     });
     Roles.addUsersToRoles(id, ["admin"], "default-group");
   }
+
+  if (!Accounts.findUserByEmail("parnell@lokal.ly")) {
+    var id = Accounts.createUser({
+      email: "parnell@lokal.ly",
+      password: "P4LaNToJORFJ&1+s$[8B",
+      profile: { username: "parnell" },
+      profile: { name: "Parnell" }
+    });
+    Roles.addUsersToRoles(id, ["admin"], "default-group");
+  }
 });
