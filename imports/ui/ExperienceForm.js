@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import gql from "graphql-tag";
-import { Mutation } from "react-apollo";
+import { Mutation, Query } from "react-apollo";
 import styled from "styled-components";
 
 import useUser from "./hooks/useUser";
@@ -92,6 +92,16 @@ const ExperiencesQuery = gql`
       guideId
       times
       takingBookings
+    }
+  }
+`;
+
+const GuidesQuery = gql`
+  {
+    guides {
+      name
+      bio
+      _id
     }
   }
 `;
@@ -246,13 +256,28 @@ const ExperienceForm = props => {
                   bookingIdInput = node;
                 }}
               />
-              <label>Guide ID</label>
-              <input
-                type="text"
-                ref={node => {
-                  guideIdInput = node;
+              <Query query={GuidesQuery}>
+                {({ loading, error, data }) => {
+                  if (loading) return <p>Loading...</p>;
+                  if (error) return <p>Error :(</p>;
+                  return (
+                    <>
+                      <label>Guide ID</label>
+                      <select
+                        ref={node => {
+                          guideIdInput = node;
+                        }}
+                      >
+                        {data.guides.map(guide => (
+                          <option key={guide._id} value={guide._id}>
+                            {guide.name}
+                          </option>
+                        ))}
+                      </select>
+                    </>
+                  );
                 }}
-              />
+              </Query>
               <label>Times</label>
               <input
                 type="text"
