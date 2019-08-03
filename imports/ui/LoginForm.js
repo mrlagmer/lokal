@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 
-export default class LoginForm extends React.Component {
-  login = e => {
+import useUser from "./hooks/useUser";
+
+const LoginForm = () => {
+  const login = e => {
     e.preventDefault();
     Meteor.loginWithPassword(
-      this.email.value,
-      this.password.value,
+      emailInput.value,
+      pwInput.value,
 
       error => {
         console.error(error);
@@ -13,12 +15,10 @@ export default class LoginForm extends React.Component {
     );
   };
 
-  render() {
-    return (
-      <form onSubmit={this.login}>
-        <input type="email" ref={input => (this.email = input)} />
-        <input type="password" ref={input => (this.password = input)} />
-        <button type="submit">Login User</button>
+  const { user } = useUser();
+  return (
+    <form onSubmit={login}>
+      {user.loggedIn ? (
         <button
           onClick={() =>
             Meteor.logout(function() {
@@ -28,7 +28,25 @@ export default class LoginForm extends React.Component {
         >
           LogOut
         </button>
-      </form>
-    );
-  }
-}
+      ) : (
+        <>
+          <input
+            type="email"
+            ref={node => {
+              emailInput = node;
+            }}
+          />
+          <input
+            type="password"
+            ref={node => {
+              pwInput = node;
+            }}
+          />
+          <button type="submit">Login User</button>
+        </>
+      )}
+    </form>
+  );
+};
+
+export default LoginForm;
