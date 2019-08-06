@@ -14,6 +14,7 @@ import { fonts } from "./components/text/fonts";
 import { Header2 } from "./components/text/Header2";
 import { HrGradient } from "./components/tags";
 import Booking from "./components/experiences/Booking";
+import LoadPage from "./components/Loading";
 
 import { googleAnalyticsId } from "./tools/General";
 import media from "./components/media";
@@ -107,7 +108,7 @@ const SingleExperience = props => {
         <LokalHead />
         <Query query={EXPERIENCEQUERY} variables={{ id }}>
           {({ loading, error, data }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <LoadPage />;
             if (error) return <p>Error :(</p>;
             return (
               <React.Fragment>
