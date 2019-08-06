@@ -12,6 +12,7 @@ import { Header2 } from "./components/text/Header2";
 import Experience from "./components/experiences/Experience";
 import media from "./components/media";
 import { ExperienceLink } from "./components/tags/";
+import LoadPage from "./components/Loading";
 
 import { googleAnalyticsId } from "./tools/General";
 
@@ -72,7 +73,7 @@ const App = () => (
       <LokalHead />
       <Query query={EXPERIENCESQUERY}>
         {({ loading, error, data }) => {
-          if (loading) return <p>Loading...</p>;
+          if (loading) return <LoadPage />;
           if (error) return <p>Error :(</p>;
           return (
             <ExperiencesSection>
