@@ -13,6 +13,7 @@ import Experience from "./components/experiences/Experience";
 import media from "./components/media";
 import { ExperienceLink } from "./components/tags/";
 import LoadPage from "./components/Loading";
+import ExperienceForm from "./components/forms/ExperienceForm";
 
 import { googleAnalyticsId } from "./tools/General";
 
@@ -93,6 +94,7 @@ const App = () => (
                     />
                   </ExperienceLink>
                 ))}
+                <ExperienceForm />
               </ExperiencesDiv>
             </ExperiencesSection>
           );
