@@ -91,7 +91,7 @@ const ExperienceForm = props => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.title}
-                    css="margin-left: 0.5rem"
+                    css="margin-left: 0.5rem; margin-bottom: 0.5rem"
                     name="title"
                     placeholder="Name your experience"
                   />
@@ -99,7 +99,7 @@ const ExperienceForm = props => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.name}
-                    css="margin-left: 0.5rem"
+                    css="margin-left: 0.5rem; margin-bottom: 0.5rem"
                     name="name"
                     placeholder="Your name"
                   />
@@ -108,14 +108,14 @@ const ExperienceForm = props => {
                     onBlur={handleBlur}
                     value={values.email}
                     type="email"
-                    css="margin-left: 0.5rem"
+                    css="margin-left: 0.5rem; margin-bottom: 0.5rem"
                     name="email"
                     required
                     placeholder="Your email"
                   />
                 </div>
                 <Button
-                  css="margin-left: 1rem; margin-top: 1rem"
+                  css="margin-left: 1rem; margin-top: 1rem; margin-bottom: 1rem"
                   type="submit"
                   disabled={isSubmitting}
                 >
