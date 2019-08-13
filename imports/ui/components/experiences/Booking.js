@@ -77,7 +77,7 @@ const Booking = props => {
             css="margin-top: 1rem; border-color: #b5b5b5;"
             type="number"
             min={props.minBookings}
-            max="10"
+            max={props.maxBookings}
             value={pax}
             onChange={event => setPax(event.target.value)}
           />
