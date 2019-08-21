@@ -51,6 +51,8 @@ We reserve the right at any time to modify or discontinue our service (or any pa
 
 We shall not be liable to you or to any third-party for any modification, price change, suspension or discontinuance of our service.
 
+**By default, success fees for guides are 20% of total bookings**
+
 #### SECTION 5 - TOURS OR SERVICES
 
 Lokally provides a software engine and website which enables

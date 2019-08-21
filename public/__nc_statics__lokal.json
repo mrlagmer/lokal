@@ -65,6 +65,42 @@
     "state": 1,
     "path": "/home/stu/Code/lokal/public/images/cookieyoga"
   },
+  "images/guadapaint/1.jpg": {
+    "mt": "Tue Aug 20 2019 01:51:02 GMT+1000 (Australian Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/home/stu/Code/lokal/public/images/guadapaint/1.jpg"
+  },
+  "images/guadapaint/2.jpg": {
+    "mt": "Tue Aug 20 2019 20:30:58 GMT+1000 (Australian Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/home/stu/Code/lokal/public/images/guadapaint/2.jpg"
+  },
+  "images/guadapaint/listing.jpg": {
+    "mt": "Tue Aug 20 2019 20:12:21 GMT+1000 (Australian Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/home/stu/Code/lokal/public/images/guadapaint/listing.jpg"
+  },
+  "images/guadapaint2/1.jpg": {
+    "mt": "Tue Aug 20 2019 20:31:26 GMT+1000 (Australian Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/home/stu/Code/lokal/public/images/guadapaint2/1.jpg"
+  },
+  "images/guadapaint2/2.jpg": {
+    "mt": "Tue Aug 20 2019 20:31:36 GMT+1000 (Australian Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/home/stu/Code/lokal/public/images/guadapaint2/2.jpg"
+  },
+  "images/guadapaint2/listing.jpg": {
+    "mt": "Tue Aug 20 2019 20:30:02 GMT+1000 (Australian Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/home/stu/Code/lokal/public/images/guadapaint2/listing.jpg"
+  },
   "images/happyguide.jpg": {
     "mt": "Mon Apr 08 2019 21:26:51 GMT+1000 (Australian Eastern Standard Time)",
     "exists": true,
@@ -138,25 +174,25 @@
     "path": "/home/stu/Code/lokal/public/images/malletyoga/2.jpg"
   },
   "images/malletyoga/listing.jpg": {
-    "mt": "Wed Jun 05 2019 20:35:09 GMT+1000 (Australian Eastern Standard Time)",
+    "mt": "Sat Aug 17 2019 11:49:34 GMT+1000 (Australian Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/home/stu/Code/lokal/public/images/malletyoga/listing.jpg"
   },
   "images/maradefense/1.jpg": {
-    "mt": "Sat Aug 03 2019 13:41:22 GMT+1000 (Australian Eastern Standard Time)",
+    "mt": "Tue Aug 06 2019 17:02:00 GMT+1000 (Australian Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/home/stu/Code/lokal/public/images/maradefense/1.jpg"
   },
   "images/maradefense/2.jpg": {
-    "mt": "Sat Aug 03 2019 13:41:14 GMT+1000 (Australian Eastern Standard Time)",
+    "mt": "Tue Aug 06 2019 17:02:00 GMT+1000 (Australian Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/home/stu/Code/lokal/public/images/maradefense/2.jpg"
   },
   "images/maradefense/listing.jpg": {
-    "mt": "Sat Aug 03 2019 13:40:51 GMT+1000 (Australian Eastern Standard Time)",
+    "mt": "Tue Aug 06 2019 17:02:00 GMT+1000 (Australian Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/home/stu/Code/lokal/public/images/maradefense/listing.jpg"
@@ -274,6 +310,24 @@
     "exists": true,
     "state": 1,
     "path": "/home/stu/Code/lokal/public/images/pubcrwalbrendon/listing.jpg"
+  },
+  "images/sipgokap/1.jpg": {
+    "mt": "Tue Aug 20 2019 20:15:53 GMT+1000 (Australian Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/home/stu/Code/lokal/public/images/sipgokap/1.jpg"
+  },
+  "images/sipgokap/2.jpg": {
+    "mt": "Tue Aug 20 2019 20:16:33 GMT+1000 (Australian Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/home/stu/Code/lokal/public/images/sipgokap/2.jpg"
+  },
+  "images/sipgokap/listing.jpg": {
+    "mt": "Tue Aug 20 2019 20:15:30 GMT+1000 (Australian Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/home/stu/Code/lokal/public/images/sipgokap/listing.jpg"
   },
   "images/top.jpg": {
     "mt": "Tue May 21 2019 19:17:22 GMT+1000 (Australian Eastern Standard Time)",
