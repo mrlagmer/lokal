@@ -7,6 +7,19 @@ const PageContent = styled.div`
   max-width: 980px;
   margin: 4rem auto;
   padding: 1rem;
+  h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  ol {
+    margin: 0.5rem;
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
+  figure {
+    margin: 0;
+    margin-top: 1rem;
+  }
 `;
 
 export default PageContent;
