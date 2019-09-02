@@ -30,8 +30,8 @@ export const RenderRoutes = () => (
       <Route exact path="/experience/edit/:id" component={EditExperienceForm} />
       <Route exact path="/addguide" component={GuideForm} />
       <Route exact path="/experiences" component={Experiences} />
-      <Route exact path="/blog" component={Blog} />
-      <Route exact path="/blog/:slug" component={BlogPage} />
+      <Route exact path="/alamat" component={Blog} />
+      <Route exact path="/alamat/:slug" component={BlogPage} />
       <Route exact path="/signin" component={AuthPageSignIn} />
       <Route exact path="/experience/:id" component={SingleExperience} />
       <Route

@@ -16,6 +16,10 @@ const PageContent = styled.div`
     list-style-type: decimal;
     list-style-position: inside;
   }
+  figure {
+    margin: 0;
+    margin-top: 1rem;
+  }
 `;
 
 export default PageContent;

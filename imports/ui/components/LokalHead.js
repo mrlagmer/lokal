@@ -148,6 +148,9 @@ const LokalHead = () => (
             <MenuItems href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform">
               <li>Become a Guide</li>
             </MenuItems>
+            <MenuItems href="/alamat">
+              <li>Blog (Alamat)</li>
+            </MenuItems>
             <MenuItems href="/about">
               <li>About Us</li>
             </MenuItems>

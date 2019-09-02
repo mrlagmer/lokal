@@ -71,7 +71,7 @@ const Blog = props => (
     <GlobalStyle />
     <Main>
       <LokalHead />
-      <PagesTitle title="Blog" />
+      <PagesTitle title="Blog (Alamat)" />
       <div css="max-width: 960px; margin: 0 auto;">
         <BlogList>
           <Query query={BLOGQUERY} client={customClient}>

@@ -17,9 +17,22 @@ import PagesTitle from "../PagesTitle";
 import { googleAnalyticsId } from "../../tools/General";
 import LoadPage from "../Loading";
 import PageContent from "../PageContent";
+import { colors } from "../colors";
 
 const BlogList = styled.ul`
   margin: 2rem auto;
+`;
+
+const Bio = styled.div`
+  padding: 1rem;
+  margin: 2rem 0;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(to right, ${colors.lg}) 10;
+`;
+
+const BioImage = styled.img`
+  border-radius: 45px;
 `;
 
 const BLOGSINGLEQUERY = gql`
@@ -31,6 +44,10 @@ const BLOGSINGLEQUERY = gql`
       content
       author {
         firstName
+        description
+        avatar(size: 90) {
+          url
+        }
       }
     }
   }
@@ -89,10 +106,19 @@ const BlogPage = props => {
             <Main>
               <LokalHead />
               <PagesTitle title={data.postBy.title} />
-              <PageContent
-                css="margin-top: 0"
-                dangerouslySetInnerHTML={{ __html: data.postBy.content }}
-              ></PageContent>
+              <PageContent css="margin-top: 0">
+                <div
+                  dangerouslySetInnerHTML={{ __html: data.postBy.content }}
+                ></div>
+                <Bio>
+                  <BioImage src={data.postBy.author.avatar.url} />
+                  <p>
+                    <span css="font-weight: bold">Written By:</span>{" "}
+                    {data.postBy.author.firstName}
+                  </p>
+                  <p>{data.postBy.author.description}</p>
+                </Bio>
+              </PageContent>
             </Main>
             <Footer />
           </AppDiv>
