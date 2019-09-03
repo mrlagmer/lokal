@@ -78,6 +78,7 @@ const App = () => (
           if (error) return <p>Error :(</p>;
           return (
             <ExperiencesSection>
+              <ExperienceForm title="Build your own team experience" />
               <Header2>Experiences</Header2>
               <ExperiencesDiv>
                 {data.experiences.map(experience => (
@@ -94,7 +95,6 @@ const App = () => (
                     />
                   </ExperienceLink>
                 ))}
-                <ExperienceForm />
               </ExperiencesDiv>
             </ExperiencesSection>
           );

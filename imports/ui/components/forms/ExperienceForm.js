@@ -1,22 +1,35 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
 import Input from "../Input";
 import { colors } from "../colors";
 import { Button } from "../Button";
+import media from "../media";
 
 const ExperienceDiv = styled.div`
-  justify-content: space-evenly;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 380px;
-  margin-top: 1rem;
-  border-width: 2px;
-  border-style: solid;
-  border-image: linear-gradient(to right, ${colors.lg}) 10;
+  ${props =>
+    props.path == "/"
+      ? css`
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 1rem 0;
+          padding: 3rem 4rem;
+          ${media.phone`justify-content: center;`}
+        `
+      : css`
+          justify-content: space-evenly;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          min-height: 380px;
+          margin: 1rem 0;
+          border-width: 2px;
+          border-style: solid;
+          border-image: linear-gradient(to right, ${colors.lg}) 10;
+        `}
 `;
 
 const ExperienceImageDiv = styled.div`
@@ -46,14 +59,14 @@ const EmailSchema = Yup.object().shape({
 
 const ExperienceForm = props => {
   const [success, setSuccess] = useState(false);
+  const { url } = props;
   return (
-    <ExperienceDiv>
+    <ExperienceDiv path={url}>
       {success ? (
         <h1 css="padding-left: 1rem">Woo! Thanks we will be in touch.</h1>
       ) : (
         <>
-          <Title>Can't find what you are looking for?</Title>
-          <Title css="font-size: 1.5rem">Build your own team experience</Title>
+          <Title>{props.title}</Title>
           <Formik
             initialValues={{ email: "", name: "", title: "" }}
             validationSchema={EmailSchema}
@@ -85,7 +98,12 @@ const ExperienceForm = props => {
               handleSubmit,
               isSubmitting
             }) => (
-              <form onSubmit={handleSubmit}>
+              <form
+                onSubmit={handleSubmit}
+                css={`
+                  ${url == "/" ? "display: flex; flex-direction: column;" : ""}
+                `}
+              >
                 <div css="padding-left: 1rem">
                   <Input
                     onChange={handleChange}
@@ -115,7 +133,12 @@ const ExperienceForm = props => {
                   />
                 </div>
                 <Button
-                  css="margin-left: 1rem; margin-top: 1rem; margin-bottom: 1rem"
+                  css={`
+                    margin-left: 1rem;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                    ${url == "/" ? "align-self: center;" : ""}
+                  `}
                   type="submit"
                   disabled={isSubmitting}
                 >
