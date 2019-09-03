@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import media from "../media";
+
 const Title = styled.h2`
   font-size: 2rem;
 `;
@@ -23,6 +25,12 @@ const PostItem = styled.li`
   display: flex;
   justify-content: space-between;
   margin: 2rem 0;
+  ${media.phone`flex-direction: column-reverse;`}
+`;
+
+const PostItemDiv = styled.div`
+  width: 60% ${media.phone`width: 100%`};
+  padding: 1rem;
 `;
 
 const BlogItem = props => {
@@ -30,13 +38,13 @@ const BlogItem = props => {
   return (
     <ItemLink href={`alamat/${props.slug}`}>
       <PostItem>
-        <div css="width: 60%">
+        <PostItemDiv>
           <Title>{props.title}</Title>
           <Author>{props.author}</Author>
           <Excerpt
             dangerouslySetInnerHTML={{ __html: props.excerpt }}
           ></Excerpt>
-        </div>
+        </PostItemDiv>
         <img src={image} />
       </PostItem>
     </ItemLink>
