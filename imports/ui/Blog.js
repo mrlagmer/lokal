@@ -44,7 +44,7 @@ const BLOGQUERY = gql`
 const cache = new InMemoryCache();
 
 const httpLink = new HttpLink({
-  uri: "http://178.128.125.240/graphql"
+  uri: "https://blog.lokal.ly/graphql"
 });
 
 const customClient = new ApolloClient({
@@ -78,7 +78,6 @@ const Blog = props => (
             {({ loading, error, data }) => {
               if (loading) return <LoadPage />;
               if (error) return <p>Error :(</p>;
-              console.log(data.posts.edges);
               return (
                 <>
                   {data.posts.edges.map(post => (
