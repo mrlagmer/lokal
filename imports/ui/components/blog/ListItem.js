@@ -45,7 +45,7 @@ const BlogItem = props => {
             dangerouslySetInnerHTML={{ __html: props.excerpt }}
           ></Excerpt>
         </PostItemDiv>
-        <img src={image} />
+        <img src={image} css="flex-shrink: 0;" />
       </PostItem>
     </ItemLink>
   );
