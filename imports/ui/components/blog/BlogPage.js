@@ -66,7 +66,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 const cache = new InMemoryCache();
 
 const httpLink = new HttpLink({
-  uri: "http://178.128.125.240/graphql"
+  uri: "https://blog.lokal.ly/graphql"
 });
 
 const link = ApolloLink.from([errorLink, httpLink]);
