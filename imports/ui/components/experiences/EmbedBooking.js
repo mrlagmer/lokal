@@ -57,7 +57,11 @@ const EmbedBooking = props => {
 
   if (bookingWidget === null) return <h1>No Books</h1>;
 
-  return <Button onClick={bookMe}>Book Now</Button>;
+  return (
+    <div css="flex-direction: column;">
+      <Button onClick={bookMe}>Book Now</Button>
+    </div>
+  );
 };
 
 export default EmbedBooking;
