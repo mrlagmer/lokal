@@ -21,6 +21,7 @@ type Mutation {
     guideId: String
     times: String
     takingBookings: Boolean
+    experienceType: ExperienceType
   ): Experience
   updateExperience(
     _id: String!
@@ -41,6 +42,7 @@ type Mutation {
     guideId: String
     times: String
     takingBookings: Boolean
+    experienceType: ExperienceType
   ): Experience
   deleteExperience(_id: String!): Experience
 }

@@ -11,7 +11,7 @@ import GuiesResolvers from "../../api/guides/resolvers";
 import QuerySchema from "../../api/query.graphql";
 import MutationSchema from "../../api/mutation.graphql";
 
-//hiii manyuiuty sdfffryytyuoopomiuypoipiepp0rre
+//hiii manyuiuty sdfffryytyuoopomiuypoipiepp0rrerupsuy
 
 const typeDefs = [ExperiencesSchema, GuidesSchema, QuerySchema, MutationSchema];
 

@@ -1,5 +1,10 @@
 # query.graphql
 
+enum ExperienceType {
+  inHouse
+  experience
+}
+
 type Query {
   experiences: [Experience]
   experience(_id: String!): Experience
