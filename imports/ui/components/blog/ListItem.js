@@ -36,7 +36,7 @@ const PostItemDiv = styled.div`
 const BlogItem = props => {
   const image = props.imageURL ? props.imageURL.sourceUrl : "";
   return (
-    <ItemLink href={`alamat/${props.slug}`}>
+    <ItemLink href={`/alamat/${props.slug}`}>
       <PostItem>
         <PostItemDiv>
           <Title>{props.title}</Title>

@@ -57,12 +57,14 @@ const Booking = props => {
           {props.takingBookings ? (
             <EmbedBooking bookingId={props.bookingId} pax={pax} />
           ) : (
-            <Button
-              as="a"
-              href={`mailto:help@lokal.ly?subject=Enquiry - ${props.name}`}
-            >
-              Enquire Now
-            </Button>
+            <div css="display: flex; flex-direction: column;">
+              <Button
+                as="a"
+                href={`mailto:help@lokal.ly?subject=Enquiry - ${props.name}`}
+              >
+                Enquire Now
+              </Button>
+            </div>
           )}
         </BookingDivInfo>
         <p css="margin-top: 1rem;">
