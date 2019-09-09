@@ -20,6 +20,9 @@ const PageContent = styled.div`
     margin: 0;
     margin-top: 1rem;
   }
+  p {
+    margin: 1rem 0;
+  }
 `;
 
 export default PageContent;
