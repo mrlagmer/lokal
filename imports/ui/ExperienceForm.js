@@ -29,6 +29,7 @@ const createExperience = gql`
     $guideId: String
     $times: String
     $takingBookings: Boolean
+    $experienceType: ExperienceType
   ) {
     createExperience(
       name: $name
@@ -48,6 +49,7 @@ const createExperience = gql`
       guideId: $guideId
       times: $times
       takingBookings: $takingBookings
+      experienceType: $experienceType
     ) {
       _id
       name
@@ -67,6 +69,7 @@ const createExperience = gql`
       guideId
       times
       takingBookings
+      experienceType
     }
   }
 `;
@@ -92,6 +95,7 @@ const ExperiencesQuery = gql`
       guideId
       times
       takingBookings
+      experienceType
     }
   }
 `;
@@ -147,7 +151,8 @@ const ExperienceForm = props => {
                     bookingId: Number(bookingIdInput.value),
                     guideId: guideIdInput.value,
                     times: timesInput.value,
-                    takingBookings: takingBookingsInput.checked
+                    takingBookings: takingBookingsInput.checked,
+                    experienceType: experienceTypeInput.value
                   }
                 })
                   .then(() => {
@@ -293,6 +298,15 @@ const ExperienceForm = props => {
                 }}
                 value="1"
               />
+              <label>Experience Type</label>
+              <select
+                ref={node => {
+                  experienceTypeInput = node;
+                }}
+              >
+                <option value="experience">experience</option>
+                <option value="inHouse">inHouse</option>
+              </select>
               <button onClick={this.submitForm}>Submit</button>
             </FormDiv>
           )}

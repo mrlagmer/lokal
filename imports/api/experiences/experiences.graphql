@@ -22,4 +22,5 @@ type Experience {
   times: String
   takingBookings: Boolean
   guide: Guide
+  experienceType: ExperienceType
 }

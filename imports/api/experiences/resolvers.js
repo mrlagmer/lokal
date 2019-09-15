@@ -42,7 +42,8 @@ export default {
         bookingId,
         guideId,
         times,
-        takingBookings
+        takingBookings,
+        experienceType
       },
       context
     ) {
@@ -65,7 +66,8 @@ export default {
         bookingId,
         guideId,
         times,
-        takingBookings
+        takingBookings,
+        experienceType
       });
       return Experiences.findOne(experienceId);
     },
