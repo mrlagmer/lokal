@@ -6,7 +6,7 @@ enum ExperienceType {
 }
 
 type Query {
-  experiences: [Experience]
+  experiences(experienceType: ExperienceType): [Experience]
   experience(_id: String!): Experience
   featured(featured: Boolean!): [Experience]
   guides: [Guide]

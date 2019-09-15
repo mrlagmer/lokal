@@ -43,6 +43,19 @@ const EXPERIENCESQUERY = gql`
   }
 `;
 
+const EXPERIENCESINHOUSEQUERY = gql`
+  {
+    experiences(experienceType: inHouse) {
+      _id
+      type
+      name
+      location
+      cost
+      imagesFolder
+    }
+  }
+`;
+
 const App = () => (
   <AppDiv>
     <Helmet>
@@ -72,6 +85,33 @@ const App = () => (
     <GlobalStyle />
     <Main>
       <LokalHead />
+      <Query query={EXPERIENCESINHOUSEQUERY}>
+        {({ loading, error, data }) => {
+          if (loading) return <LoadPage />;
+          if (error) return <p>Error :(</p>;
+          return (
+            <ExperiencesSection>
+              <Header2>In House Experiences</Header2>
+              <ExperiencesDiv>
+                {data.experiences.map(experience => (
+                  <ExperienceLink
+                    key={experience._id}
+                    href={`/experience/${experience._id}`}
+                  >
+                    <Experience
+                      type={experience.type}
+                      location={experience.location}
+                      title={experience.name}
+                      price={experience.cost}
+                      slug={experience.imagesFolder}
+                    />
+                  </ExperienceLink>
+                ))}
+              </ExperiencesDiv>
+            </ExperiencesSection>
+          );
+        }}
+      </Query>
       <Query query={EXPERIENCESQUERY}>
         {({ loading, error, data }) => {
           if (loading) return <LoadPage />;
