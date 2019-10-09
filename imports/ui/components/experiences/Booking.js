@@ -1,17 +1,35 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
 
 import { colors } from "../colors";
 import { Button } from "../Button";
 import { Header2 } from "../text/Header2";
 import media from "../media";
-import { formatCurrency } from "../../tools/General";
-import EmbedBooking from "./EmbedBooking";
-import Input from "../Input";
+import SingleExperienceForm from "../forms/SingleExperienceForm";
+
+const useStyles = makeStyles(theme => ({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+}));
+
+const ModalStyle = styled.div`
+  background-color: #f2f2f2;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(to right, ${colors.lg}) 10;
+`;
 
 const BookingDiv = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
   margin-top: 2rem;
   border-width: 2px;
@@ -37,53 +55,52 @@ const MaxBookingDiv = styled.div`
 
 const Booking = props => {
   const [pax, setPax] = useState(props.minBookings);
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <div css="margin-top: 3rem">
       <Header2>Book this Experience</Header2>
       <BookingDiv>
         <BookingDivInfo>
-          <CostDiv>
-            <p css="font-size: 1rem; margin-bottom: 1rem">{props.available}</p>
-            {props.cost > 0 && (
-              <p>USD {formatCurrency(props.cost).us} Per Person</p>
-            )}
-            {props.cost > 0 && (
-              <p>~{formatCurrency(props.cost).au} Per Person</p>
-            )}
-            {props.cost > 0 && (
-              <p>~{formatCurrency(props.cost).ph} Per Person</p>
-            )}
-          </CostDiv>
-          {props.takingBookings ? (
-            <EmbedBooking bookingId={props.bookingId} pax={pax} />
-          ) : (
-            <div css="display: flex; flex-direction: column;">
-              <Button
-                as="a"
-                href={`mailto:help@lokal.ly?subject=Enquiry - ${props.name}`}
-              >
-                Enquire Now
-              </Button>
-            </div>
-          )}
+          <div css="display: flex; flex-direction: column;">
+            <Button onClick={handleOpen}>Book Now</Button>
+          </div>
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            className={classes.modal}
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500
+            }}
+          >
+            <Fade in={open}>
+              <ModalStyle>
+                <SingleExperienceForm
+                  title={`Book ${props.name}`}
+                  eventName={props.name}
+                />
+              </ModalStyle>
+            </Fade>
+          </Modal>
         </BookingDivInfo>
-        <p css="margin-top: 1rem;">
-          Minimum Guests Per Booking: {props.minBookings}
-        </p>
-        <p css="margin-top: 1rem;">
-          Maximum Guests Per Booking: {props.maxBookings}
-        </p>
-        <MaxBookingDiv>
-          <p css="align-self: center; margin-right: 1rem;">Total Bookings:</p>
-          <Input
-            css="margin-top: 1rem; border-color: #b5b5b5;"
-            type="number"
-            min={props.minBookings}
-            max={props.maxBookings}
-            value={pax}
-            onChange={event => setPax(event.target.value)}
-          />
-        </MaxBookingDiv>
+        {props.minBookings > 0 && (
+          <div>
+            <p>Minimum Guests Per Booking: {props.minBookings}</p>
+            <p>Maximum Guests Per Booking: {props.maxBookings}</p>
+          </div>
+        )}
       </BookingDiv>
     </div>
   );
