@@ -120,6 +120,8 @@ const SingleExperience = props => {
                     length={data.experience.length}
                     includes={data.experience.includes}
                     language={data.experience.language}
+                    cost={data.experience.cost}
+                    min={data.experience.minBookings}
                   />
                   <Booking
                     available={data.experience.times}
