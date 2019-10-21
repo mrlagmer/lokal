@@ -1,5 +1,8 @@
 {
   "mailchimp": {
     "key": "1235ad31ffff7df1bc5cea512a6d4daa-us20"
+  },
+  "prerenderIo": {
+    "prerenderToken": "WRPR8IOqXebbac0TabeK"
   }
 }
