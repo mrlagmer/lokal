@@ -36,7 +36,16 @@ const HeroTextHeader = styled.h2`
   ${media.phone`font-size: 4rem;`}
 `;
 
+const HeroTextHeaderSmaller = styled.h2`
+  color: white;
+  font-size: 3rem;
+  margin-top: 2rem;
+  ${media.desktop`font-size: 2rem;`}
+  ${media.phone`font-size: 1rem;`}
+`;
+
 const HeroTextDiv = styled.div`
+  margin-top: 2rem;
   margin-right: -35%;
   z-index: 1;
   ${media.tablet`margin-right: 0;`}
@@ -44,6 +53,7 @@ const HeroTextDiv = styled.div`
 `;
 
 const HeroP = styled.p`
+  margin-top: 3rem;
   color: ${colors.black[5]};
   font-size: 1.5rem;
   font-weight: bold;
@@ -72,15 +82,13 @@ const HeroHome = () => (
         <Logo />
       </HeroLogo>
       <HeroTextDiv>
-        <HeroTextHeader>
-          Explore
-          <br /> like a lokal.
-        </HeroTextHeader>
+        <HeroTextHeader>Let us create</HeroTextHeader>
+        <HeroTextHeaderSmaller> Your next team building</HeroTextHeaderSmaller>
       </HeroTextDiv>
       <HeroP>
-        Connect to the very best lokal culture has to offer. Eat, drink and
-        adventure through our curated experiences with the expertise of lokal
-        guides.
+        Pulling together a team building activity that everyone will love is no
+        mean-feat. Let our expert team help you design an activity that's sure
+        to win your team over.
       </HeroP>
       <HeroButtonDiv>
         <Button as="a" href="/experiences">
@@ -89,7 +97,7 @@ const HeroHome = () => (
       </HeroButtonDiv>
     </HeroDiv>
     <div>
-      <HeroImage src="/images/top.jpg" />
+      <HeroImage src="/images/topteam.jpg" />
     </div>
   </StyledHeroHome>
 );
