@@ -6,7 +6,7 @@ import media from "../media";
 import { common } from "../Common";
 import { colors } from "../colors";
 
-import { GuidePat, GuideVenji, GuideMallet } from "./GuideBios";
+import { Mystry } from "./Experiences";
 
 const StyledGuidesHome = styled.section`
   margin: ${common.margintb} 5rem;
@@ -16,8 +16,6 @@ const StyledGuidesHome = styled.section`
 const GuidesFlexBox = styled.div`
   display: flex;
   justify-content: end;
-  margin-bottom: 5rem;
-  justify-content: center;
   ${media.tablet`flex-direction: column;`}
   ${media.tablet`align-items: center;`}
   ${media.phone`flex-direction: column;`}
@@ -47,28 +45,21 @@ const StyledGuidesP = styled.p`
   font-size: 2.4rem;
   text-transform: uppercase;
   font-weight: bold;
+  ${media.phone`margin: 0 1rem;`}
+  ${media.phone`text-align: center;`}
 `;
 
 const randomize = myArray => {
   return myArray[Math.floor(Math.random() * myArray.length)];
 };
 
-const Bios = [<GuidePat />, <GuideVenji />, <GuideMallet />];
+const Bios = [<Mystry />];
 
 const GuidesHome = () => (
   <StyledGuidesHome>
     <GuidesFlexBox>
       <StyledGuidesTop>
-        <StyledGuidesLokal>Lokal.ly</StyledGuidesLokal>
-        <StyledGuidesP>Guides</StyledGuidesP>
-      </StyledGuidesTop>
-      <StyledGuidesTop>
-        <Button
-          as="a"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform"
-        >
-          Become a Guide
-        </Button>
+        <StyledGuidesP>Some Examples</StyledGuidesP>
       </StyledGuidesTop>
     </GuidesFlexBox>
     {randomize(Bios)}

@@ -7,6 +7,7 @@ import Logo from "../Logo";
 import media from "../media";
 import { Button } from "../Button";
 import { common } from "../Common";
+import BasicForm from "../forms/BasicForm";
 
 const StyledHeroHome = styled.section`
   background: linear-gradient(${colors.aqua[5]}, ${colors.teal[5]});
@@ -65,14 +66,17 @@ const HeroP = styled.p`
 const HeroDiv = styled.div`
   display: flex;
   flex-direction: column;
-  padding-left: 2rem;
+  padding: 0 2rem;
   max-width: 40%;
   ${media.tablet`max-width:100%;`}
 `;
 
 const HeroButtonDiv = styled.div`
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-right: -20%;
+  z-index: 1;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  ${media.tablet`margin-right: 0;`}
 `;
 
 const HeroHome = () => (
@@ -91,9 +95,7 @@ const HeroHome = () => (
         to win your team over.
       </HeroP>
       <HeroButtonDiv>
-        <Button as="a" href="/experiences">
-          View Experiences
-        </Button>
+        <BasicForm />
       </HeroButtonDiv>
     </HeroDiv>
     <div>
