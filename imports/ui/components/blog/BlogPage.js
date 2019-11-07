@@ -81,8 +81,12 @@ const BlogPage = props => {
   return (
     <Query query={BLOGSINGLEQUERY} client={customClient} variables={{ slug }}>
       {({ loading, error, data }) => {
-        if (loading) return <LoadPage />;
+        if (loading) {
+          window.prerenderReady = false;
+          return <LoadPage />;
+        }
         if (error) return <p>Error :(</p>;
+        window.prerenderReady = true;
         return (
           <AppDiv>
             <Helmet>

@@ -7,7 +7,7 @@ import { colors } from "./colors";
 const StyledLogo = styled.div`
   display: flex;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   margin-top: 2rem;
 `;
 

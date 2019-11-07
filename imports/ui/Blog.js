@@ -65,6 +65,7 @@ const Blog = props => (
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','${googleAnalyticsId}');
+          window.prerenderReady = false;
         `}
       </script>
     </Helmet>
@@ -78,6 +79,7 @@ const Blog = props => (
             {({ loading, error, data }) => {
               if (loading) return <LoadPage />;
               if (error) return <p>Error :(</p>;
+              window.prerenderReady = true;
               return (
                 <>
                   {data.posts.edges.map(post => (

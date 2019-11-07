@@ -1,3 +1,3 @@
 export const common = {
-  margintb: "5rem"
+  margintb: "15rem"
 };

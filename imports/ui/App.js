@@ -9,8 +9,11 @@ import HeroHome from "./components/home/HeroHome";
 import GuidesHome from "./components/home/GuidesHome";
 import EmailForm from "./components/home/EmailForm";
 import { googleAnalyticsId } from "./tools/General";
-import Featured from "./components/home/Featured";
-import ExperienceForm from "./components/forms/ExperienceForm";
+import LokalHead from "./components/LokalHead";
+import Section from "./components/home/Section";
+import Benefits from "./components/home/Benefits";
+import Snaps from "./components/home/Snaps";
+import Easy from "./components/home/Easy";
 
 const App = props => {
   return (
@@ -42,19 +45,18 @@ const App = props => {
       <GlobalStyle />
       <Main>
         <HeroHome />
-        <ExperienceForm
-          title="Let us create a bespoke itinerary!"
-          url={props.location.pathname}
+        <Section
+          header="Think of us as your team building concierge"
+          p="We know Manila inside and out. And we know what makes lokal teams
+        tick. Our service creates bespoke team building activities and
+        itineraries that delights both you and your staff, without you
+        having to do the leg work."
         />
-        <Featured />
-        <EmailForm />
+        <Easy />
         <GuidesHome />
-        <HeaderSection
-          header="Ready to get started?"
-          p="Become a local guide and share your experience with travelers and teams"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform"
-          button_text="Get Started!"
-        />
+        <EmailForm />
+        <Benefits header="Benefits of Using Us" />
+        <Snaps />
       </Main>
       <Footer />
     </AppDiv>
