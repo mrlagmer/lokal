@@ -10,9 +10,10 @@ const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   margin: ${common.margintb} 0;
-  padding: 6rem 4rem;
+  padding: 0 4rem;
   ${media.phone`justify-content: center;`}
   ${media.phone`padding: 3rem 2rem;`}
+  ${media.phone`margin: 4rem 0;`}
 `;
 
 const P = styled.p`

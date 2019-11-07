@@ -12,6 +12,7 @@ const StyledSection = styled.section`
   margin: ${common.margintb} 0;
   padding: 3rem 4rem;
   ${media.phone`justify-content: center;`}
+  ${media.phone`margin: 4rem 0;`}
 `;
 
 const BenefitsDiv = styled.div`

@@ -8,15 +8,23 @@ import media from "../media";
 import { Button } from "../Button";
 import { common } from "../Common";
 import BasicForm from "../forms/BasicForm";
+import LokalHead from "../LokalHead";
 
 const StyledHeroHome = styled.section`
   background: linear-gradient(${colors.aqua[5]}, ${colors.teal[5]});
   display: flex;
+  position: relative;
   margin-bottom: ${common.margintb};
   margin-left: auto;
   margin-right: auto;
   max-width: 1327px;
   ${media.tablet`display:block;`}
+  ${media.phone`margin-bottom: 4rem ;`}
+`;
+
+const HeadArea = styled.div`
+  position: absolute;
+  width: 100%;
 `;
 
 const HeroLogo = styled.div`
@@ -46,7 +54,7 @@ const HeroTextHeaderSmaller = styled.h2`
 `;
 
 const HeroTextDiv = styled.div`
-  margin-top: 2rem;
+  margin-top: 10rem;
   margin-right: -35%;
   z-index: 1;
   ${media.tablet`margin-right: 0;`}
@@ -81,10 +89,10 @@ const HeroButtonDiv = styled.div`
 
 const HeroHome = () => (
   <StyledHeroHome>
+    <HeadArea>
+      <LokalHead />
+    </HeadArea>
     <HeroDiv>
-      <HeroLogo>
-        <Logo />
-      </HeroLogo>
       <HeroTextDiv>
         <HeroTextHeader>Let us create</HeroTextHeader>
         <HeroTextHeaderSmaller> Your next team building</HeroTextHeaderSmaller>

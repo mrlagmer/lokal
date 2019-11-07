@@ -9,8 +9,7 @@ import HeroHome from "./components/home/HeroHome";
 import GuidesHome from "./components/home/GuidesHome";
 import EmailForm from "./components/home/EmailForm";
 import { googleAnalyticsId } from "./tools/General";
-import Featured from "./components/home/Featured";
-import ExperienceForm from "./components/forms/ExperienceForm";
+import LokalHead from "./components/LokalHead";
 import Section from "./components/home/Section";
 import Benefits from "./components/home/Benefits";
 import Snaps from "./components/home/Snaps";
@@ -53,11 +52,11 @@ const App = props => {
         itineraries that delights both you and your staff, without you
         having to do the leg work."
         />
+        <Easy />
         <GuidesHome />
         <EmailForm />
         <Benefits header="Benefits of Using Us" />
         <Snaps />
-        <Easy />
       </Main>
       <Footer />
     </AppDiv>

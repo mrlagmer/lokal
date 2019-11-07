@@ -4,10 +4,16 @@ import InstagramEmbed from "react-instagram-embed";
 
 import { colors } from "../colors";
 import media from "../media";
+import { common } from "../Common";
 
 const StyledFeatured = styled.div`
   margin-top: 8rem;
   background: linear-gradient(to right, ${colors.lgPurpuleRed});
+`;
+
+const StyledSection = styled.section`
+  margin: ${common.margintb} 0;
+  ${media.phone`margin: 4rem 0;`}
 `;
 
 const FeaturedH1 = styled.h1`
@@ -28,7 +34,7 @@ const GramMiddle = styled.div`
 `;
 
 const Snaps = () => (
-  <section>
+  <StyledSection>
     <StyledFeatured>
       <FeaturedH1>Happy Snaps</FeaturedH1>
     </StyledFeatured>
@@ -76,7 +82,7 @@ const Snaps = () => (
         />
       </GramNormal>
     </div>
-  </section>
+  </StyledSection>
 );
 
 export default Snaps;

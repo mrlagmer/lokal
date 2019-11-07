@@ -34,6 +34,7 @@ const StyledSection = styled.section`
   padding: 3rem 4rem;
   ${media.tablet`flex-direction: column;`}
   ${media.phone`justify-content: center;`}
+  ${media.phone`margin: 4rem 0;`}
 `;
 
 const P = styled.p`

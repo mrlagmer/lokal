@@ -16,6 +16,7 @@ const StyledEmailForm = styled.section`
   margin-top: calc(76px + ${common.margintb});
   margin-bottom: ${common.margintb};
   ${media.tablet`flex-direction:column;`}
+  ${media.phone`margin: 4rem 0;`}
 `;
 
 const ImageDiv = styled.div`
