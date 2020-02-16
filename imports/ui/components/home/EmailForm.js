@@ -13,8 +13,8 @@ import { common } from "../Common";
 const StyledEmailForm = styled.section`
   display: flex;
   justify-content: space-evenly;
-  margin-top: calc(76px + ${common.margintb});
-  margin-bottom: ${common.margintb};
+  margin: ${common.margintb} auto;
+  max-width: 1127px;
   ${media.tablet`flex-direction:column;`}
   ${media.phone`margin: 4rem 0;`}
 `;
@@ -131,8 +131,8 @@ class EmailForm extends React.Component {
             <EmailFormElement onSubmit={handleSubmit}>
               <EmailP>Stay in the Loop.</EmailP>
               <EmailText>
-                Get the latest updates on new experiences, travel stories &
-                special offers exclusive to our newsletter.
+                Get the latest updates on offshoring, local news, and special
+                offers exclusive to our newsletter
               </EmailText>
               {this.state.success ? (
                 <h1>Woo! Thanks we will be in touch.</h1>

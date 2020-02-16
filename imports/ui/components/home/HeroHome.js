@@ -17,7 +17,7 @@ const StyledHeroHome = styled.section`
   margin-bottom: ${common.margintb};
   margin-left: auto;
   margin-right: auto;
-  max-width: 1327px;
+  max-width: 1127px;
   ${media.tablet`display:block;`}
   ${media.phone`margin-bottom: 4rem ;`}
 `;
@@ -41,6 +41,7 @@ const HeroImage = styled.img`
 const HeroTextHeader = styled.h2`
   color: white;
   font-size: 7rem;
+  ${media.tablet`margin-top: 2rem;`}
   ${media.desktop`font-size: 5rem;`}
   ${media.phone`font-size: 4rem;`}
 `;
@@ -49,12 +50,13 @@ const HeroTextHeaderSmaller = styled.h2`
   color: white;
   font-size: 3rem;
   margin-top: 2rem;
+  ${media.tablet`margin-top: 2rem;`}
   ${media.desktop`font-size: 2rem;`}
-  ${media.phone`font-size: 1rem;`}
+  ${media.phone`font-size: 2rem;`}
 `;
 
 const HeroTextDiv = styled.div`
-  margin-top: 10rem;
+  margin-top: 7rem;
   margin-right: -35%;
   z-index: 1;
   ${media.tablet`margin-right: 0;`}
@@ -62,7 +64,7 @@ const HeroTextDiv = styled.div`
 `;
 
 const HeroP = styled.p`
-  margin-top: 3rem;
+  margin-top: 2rem;
   color: ${colors.black[5]};
   font-size: 1.5rem;
   font-weight: bold;
@@ -94,20 +96,20 @@ const HeroHome = () => (
     </HeadArea>
     <HeroDiv>
       <HeroTextDiv>
-        <HeroTextHeader>Let us create</HeroTextHeader>
-        <HeroTextHeaderSmaller> Your next team building</HeroTextHeaderSmaller>
+        <HeroTextHeader>Let us help </HeroTextHeader>
+        <HeroTextHeaderSmaller>your team grow</HeroTextHeaderSmaller>
       </HeroTextDiv>
       <HeroP>
-        Pulling together a team building activity that everyone will love is no
-        mean-feat. Let our expert team help you design an activity that's sure
-        to win your team over.
+        Expanding your team is no easy task. Looking to hire offshore may be an
+        efficient way to scale, but can be difficult without proper planning.
+        Let our expert team help you create a strategy for growth abroad.
       </HeroP>
       <HeroButtonDiv>
         <BasicForm />
       </HeroButtonDiv>
     </HeroDiv>
     <div>
-      <HeroImage src="/images/topteam.jpg" />
+      <HeroImage src="/images/hero2.jpg" />
     </div>
   </StyledHeroHome>
 );

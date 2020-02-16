@@ -17,8 +17,9 @@ const ExperienceDiv = styled.div`
 `;
 
 const Form = styled.form`
+  display: flex;
   ${media.phone`display: flex;`}
-  ${media.phone`flex-direction: column;`}
+  ${media.phone`flex-direction: column;`};
 `;
 
 const HomeInput = styled(Input)`
@@ -101,6 +102,7 @@ const BasicForm = props => {
                   value={values.name}
                   name="name"
                   placeholder="Your name"
+                  css="margin-left:0"
                 />
                 <HomeInput
                   onChange={handleChange}
@@ -111,10 +113,12 @@ const BasicForm = props => {
                   required
                   placeholder="Your email"
                 />
-                <ArrowButton
-                  type="submit"
-                  disabled={isSubmitting}
-                ></ArrowButton>
+                <div>
+                  <ArrowButton
+                    type="submit"
+                    disabled={isSubmitting}
+                  ></ArrowButton>
+                </div>
 
                 {errors.email && touched.email && errors.email}
               </Form>

@@ -46,14 +46,12 @@ const App = props => {
       <Main>
         <HeroHome />
         <Section
-          header="Think of us as your team building concierge"
-          p="We know Manila inside and out. And we know what makes lokal teams
-        tick. Our service creates bespoke team building activities and
-        itineraries that delights both you and your staff, without you
-        having to do the leg work."
+          header="Think of us as your offshore strategy concierge"
+          p="We know how to grow teams, and we understand the factors of outsourcing,
+          freelancing, and offshoring in Manila. Our service works to ensure that you
+          make the best choices in regard to growing your team as well as recognise how to expand further."
         />
         <Easy />
-        <GuidesHome />
         <EmailForm />
         <Benefits header="Benefits of Using Us" />
         <Snaps />

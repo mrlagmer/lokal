@@ -69,13 +69,10 @@ const Footer = () => (
     <FooterInner>
       <FooterLogo src="/images/lokalfoot.png" />
       <FooterLinks>
-        <FooterA href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform">
-          Become a Guide
-        </FooterA>
         <FooterA href="https://docs.google.com/forms/d/1eX5NLRbe3_d1W-I-HJrCPhMJo_Q_9QMdjpyCzahA7mc/viewform">
           Contact
         </FooterA>
-        <FooterA href="/about">About Us</FooterA>
+
         <FooterA href="/privacy">Privacy Policy</FooterA>
         <FooterA href="/cancelation-policy">Cancelation Policy</FooterA>
         <FooterA href="/code-of-conduct">Code of Conduct</FooterA>
@@ -83,7 +80,7 @@ const Footer = () => (
       </FooterLinks>
       <FooterTagLine>
         <p>
-          Think globally, <br /> Travel lokally.
+          Think lokally, <br /> Grow globally.
         </p>
         <SocialDiv>
           <SocialLink href="https://www.facebook.com/explore.lokally/">

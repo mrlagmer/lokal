@@ -65,16 +65,15 @@ const TeamForm = props => {
         <>
           <Title>{props.title}</Title>
           <Formik
-            initialValues={{ email: "", name: "", budget: "", size: "" }}
+            initialValues={{ email: "", name: "", roles: "" }}
             validationSchema={EmailSchema}
             onSubmit={(values, { setSubmitting }) => {
               Meteor.call(
                 "slackTeam.sendForm",
                 {
-                  budget: values.budget,
+                  roles: values.roles,
                   name: values.name,
-                  email: values.email,
-                  size: values.size
+                  email: values.email
                 },
                 (err, res) => {
                   if (err) {
@@ -114,28 +113,20 @@ const TeamForm = props => {
                   <Input
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    value={values.budget}
-                    css="margin-left: 0.5rem; margin-bottom: 0.5rem"
-                    name="budget"
-                    placeholder="Budget"
-                  />
-                  <Input
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.size}
-                    css="margin-left: 0.5rem; margin-bottom: 0.5rem"
-                    name="size"
-                    placeholder="Team Size"
-                  />
-                  <Input
-                    onChange={handleChange}
-                    onBlur={handleBlur}
                     value={values.email}
                     type="email"
                     css="margin:0 0.5rem; margin-bottom: 0.5rem"
                     name="email"
                     required
                     placeholder="Your email"
+                  />
+                  <Input
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.roles}
+                    css="margin-left: 0.5rem; margin-bottom: 0.5rem"
+                    name="roles"
+                    placeholder="Roles"
                   />
                 </div>
                 <Button

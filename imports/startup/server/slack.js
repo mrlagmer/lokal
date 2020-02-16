@@ -125,10 +125,9 @@ export const sendSlackTeam = new ValidatedMethod({
   validate: new SimpleSchema({
     email: { type: String },
     name: { type: String },
-    size: { type: String },
-    budget: { type: String }
+    roles: { type: String }
   }).validator(),
-  run({ budget, name, email, size }) {
+  run({ roles, name, email }) {
     HTTP.call(
       "POST",
       "https://hooks.slack.com/services/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",
@@ -149,7 +148,7 @@ export const sendSlackTeam = new ValidatedMethod({
               type: "section",
               text: {
                 type: "mrkdwn",
-                text: `*Name: * ${name}\n *Email: * ${email} \n *Teram Size: * ${size} \n *Budget: * ${budget}`
+                text: `*Name: * ${name}\n *Email: * ${email} \n *Roles: * ${roles} \n `
               }
             }
           ]

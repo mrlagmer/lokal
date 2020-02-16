@@ -28,13 +28,16 @@ const ModalStyle = styled.div`
 `;
 
 const StyledSection = styled.section`
+max-width: 1127px;
   display: flex;
   align-items: center;
-  margin: ${common.margintb} 0;
-  padding: 3rem 4rem;
+  margin: ${common.margintb} auto;
+  padding: 3rem 0;
   ${media.tablet`flex-direction: column;`}
+  ${media.tablet`padding: 2rem 2rem;`}
   ${media.phone`justify-content: center;`}
   ${media.phone`margin: 4rem 0;`}
+  ${media.phone`padding: 2rem 2rem;`}
 `;
 
 const P = styled.p`
@@ -68,7 +71,7 @@ const Easy = props => {
   return (
     <StyledSection>
       <ImageDiv>
-        <img src="/images/bigeasy.jpg" />
+        <img src="/images/easy2.jpg" />
       </ImageDiv>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -90,16 +93,16 @@ const Easy = props => {
       </Modal>
       <div css="display: flex; flex-direction: column;">
         <Header2>Easy As 1,2,3</Header2>
-        <P>We've designed our process to save you time, money & uncertanty:</P>
+        <P>We've designed our process to save you time, money & uncertainty:</P>
         <EasyOl>
-          <li>Send us your name, email, team size & budget.</li>
+          <li>Send us your name, email, roles you're looking for</li>
           <li>
-            We'll get in touch to get a quick rundown of the likes & dislikes of
-            your team.
+            We'll get in touch to set up a time for your first consultation
           </li>
           <li>
-            We'll come back to you with a range of fully customised options
-            desinged to delight you & your team.
+            We'll work through your needs, discuss the options that you have,
+            then afterwards send you a strategy deck based on our conversation
+            together
           </li>
         </EasyOl>
         <Button onClick={handleOpen}>Get Started</Button>

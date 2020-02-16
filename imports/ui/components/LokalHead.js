@@ -142,12 +142,6 @@ const LokalHead = () => (
           <MenuToggleSpan />
           <MenuToggleSpan />
           <Menu>
-            <MenuItems href="/experiences">
-              <li>Experiences</li>
-            </MenuItems>
-            <MenuItems href="https://docs.google.com/forms/d/e/1FAIpQLSePymXwG9WpNk87bSKd1pRk34vxTPQf-mVFAn2bK74rGWgYIg/viewform">
-              <li>Become a Guide</li>
-            </MenuItems>
             <MenuItems href="/alamat">
               <li>Blog (Alamat)</li>
             </MenuItems>

@@ -7,20 +7,26 @@ import media from "../media";
 import { common } from "../Common";
 
 const StyledSection = styled.section`
+  max-width: 1127px;
   display: flex;
   flex-direction: column;
-  margin: ${common.margintb} 0;
-  padding: 3rem 4rem;
+  margin: ${common.margintb} auto;
+  padding: 3rem 0;
+  ${media.tablet`padding: 2rem 2rem;`}
   ${media.phone`justify-content: center;`}
-  ${media.phone`margin: 4rem 0;`}
+  ${media.phone`margin: 2rem 0;`}
+  ${media.phone`padding: 2rem 2rem;`}
 `;
 
 const BenefitsDiv = styled.div`
   display: flex;
   ${media.tablet`flex-direction: column;`}
+  ${media.tablet`align-items:center`}
+  ${media.phone`align-items:center`}
 `;
 
 const Benefit = styled.div`
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,28 +41,28 @@ const Benefits = props => (
       <Benefit>
         <i
           css="margin-bottom: 1rem;"
-          className="fas fa-money-check-alt fa-7x"
+          className="fas fa-hands-helping fa-7x"
         ></i>
-        <h4 css="margin-bottom: 1rem;">Mutiple Payment Methods</h4>
+        <h4 css="margin-bottom: 1rem;">We guide you</h4>
         <p>
-          Credit card, cash, bank deposit, paypal... however you need to pay,
-          we've got you covered.
+          We want to give you the best guidance. Our primary goal is to help you
+          assess whether or not offshoring is right for you.
         </p>
       </Benefit>
       <Benefit>
         <i css="margin-bottom: 1rem;" className="fas fa-smile fa-7x"></i>
-        <h4 css="margin-bottom: 1rem;">We know how to build Morale</h4>
+        <h4 css="margin-bottom: 1rem;">We know how to build teams</h4>
         <p>
-          Our team has worked with local teams for years and know what
-          motivates.
+          Our team has over 15 years of collective experience building offshore
+          teams
         </p>
       </Benefit>
       <Benefit>
         <i css="margin-bottom: 1rem;" className="fas fa-globe-asia fa-7x"></i>
         <h4 css="margin-bottom: 1rem;">We know Manila inside and out</h4>
         <p>
-          We've spent extensive time trying first hand everything we recommend,
-          to save yourself the groundwork.
+          We've spent extensive time working with teams in Manila that operate
+          in various ways. Let us help you get started and running effectively.
         </p>
       </Benefit>
     </BenefitsDiv>
