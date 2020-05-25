@@ -17,6 +17,7 @@ const ExperienceDiv = styled.div`
 `;
 
 const Form = styled.form`
+  display: flex;
   ${media.phone`display: flex;`}
   ${media.phone`flex-direction: column;`}
 `;
@@ -49,12 +50,10 @@ const Title = styled.p`
 `;
 
 const EmailSchema = Yup.object().shape({
-  email: Yup.string()
-    .email("Invalid email")
-    .required("Required")
+  email: Yup.string().email("Invalid email").required("Required"),
 });
 
-const BasicForm = props => {
+const BasicForm = (props) => {
   const [success, setSuccess] = useState(false);
   const { url } = props;
   return (
@@ -72,7 +71,7 @@ const BasicForm = props => {
                 {
                   name: values.name,
                   email: values.email,
-                  title: "Basic Form Submission - Homepage"
+                  title: "Basic Form Submission - Homepage",
                 },
                 (err, res) => {
                   if (err) {
@@ -92,7 +91,7 @@ const BasicForm = props => {
               handleChange,
               handleBlur,
               handleSubmit,
-              isSubmitting
+              isSubmitting,
             }) => (
               <Form onSubmit={handleSubmit}>
                 <HomeInput
@@ -101,6 +100,7 @@ const BasicForm = props => {
                   value={values.name}
                   name="name"
                   placeholder="Your name"
+                  css="margin-left:0"
                 />
                 <HomeInput
                   onChange={handleChange}
@@ -110,12 +110,14 @@ const BasicForm = props => {
                   name="email"
                   required
                   placeholder="Your email"
+                  css="margin-left:1rem"
                 />
-                <ArrowButton
-                  type="submit"
-                  disabled={isSubmitting}
-                ></ArrowButton>
-
+                <div>
+                  <ArrowButton
+                    type="submit"
+                    disabled={isSubmitting}
+                  ></ArrowButton>
+                </div>
                 {errors.email && touched.email && errors.email}
               </Form>
             )}

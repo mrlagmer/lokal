@@ -7,20 +7,26 @@ import media from "../media";
 import { common } from "../Common";
 
 const StyledSection = styled.section`
+max-width: 1127px;
   display: flex;
   flex-direction: column;
-  margin: ${common.margintb} 0;
-  padding: 3rem 4rem;
+  margin: ${common.margintb} auto;
+  padding: 3rem 0;
+  ${media.tablet`padding: 2rem 2rem;`}
   ${media.phone`justify-content: center;`}
-  ${media.phone`margin: 4rem 0;`}
+  ${media.phone`margin: 2rem 0;`}
+  ${media.phone`padding: 2rem 2rem;`}
 `;
 
 const BenefitsDiv = styled.div`
   display: flex;
   ${media.tablet`flex-direction: column;`}
+  ${media.tablet`align-items:center`}
+  ${media.phone`align-items:center`}
 `;
 
 const Benefit = styled.div`
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;

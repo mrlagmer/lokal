@@ -17,7 +17,7 @@ const StyledHeroHome = styled.section`
   margin-bottom: ${common.margintb};
   margin-left: auto;
   margin-right: auto;
-  max-width: 1327px;
+  max-width: 1127px;
   ${media.tablet`display:block;`}
   ${media.phone`margin-bottom: 4rem ;`}
 `;
@@ -40,17 +40,19 @@ const HeroImage = styled.img`
 
 const HeroTextHeader = styled.h2`
   color: white;
-  font-size: 7rem;
+  font-size: 5.5rem;
+  ${media.tablet`margin-top: 2rem;`}
   ${media.desktop`font-size: 5rem;`}
   ${media.phone`font-size: 4rem;`}
 `;
 
 const HeroTextHeaderSmaller = styled.h2`
   color: white;
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-top: 2rem;
+  ${media.tablet`margin-top: 2rem;`}
   ${media.desktop`font-size: 2rem;`}
-  ${media.phone`font-size: 1rem;`}
+  ${media.phone`font-size: 2rem;`}
 `;
 
 const HeroTextDiv = styled.div`

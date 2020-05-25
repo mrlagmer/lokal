@@ -13,8 +13,8 @@ import { common } from "../Common";
 const StyledEmailForm = styled.section`
   display: flex;
   justify-content: space-evenly;
-  margin-top: calc(76px + ${common.margintb});
-  margin-bottom: ${common.margintb};
+  max-width: 1127px;
+  margin: ${common.margintb} auto;
   ${media.tablet`flex-direction:column;`}
   ${media.phone`margin: 4rem 0;`}
 `;

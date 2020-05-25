@@ -28,13 +28,16 @@ const ModalStyle = styled.div`
 `;
 
 const StyledSection = styled.section`
+  max-width: 1127px;
   display: flex;
   align-items: center;
-  margin: ${common.margintb} 0;
-  padding: 3rem 4rem;
+  margin: ${common.margintb} auto;
+  padding: 3rem 0;
   ${media.tablet`flex-direction: column;`}
+  ${media.tablet`padding: 2rem 2rem;`}
   ${media.phone`justify-content: center;`}
   ${media.phone`margin: 4rem 0;`}
+  ${media.phone`padding: 2rem 2rem;`}
 `;
 
 const P = styled.p`

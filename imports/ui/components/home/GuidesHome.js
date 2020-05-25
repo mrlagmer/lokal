@@ -15,7 +15,7 @@ const StyledGuidesHome = styled.section`
 
 const GuidesFlexBox = styled.div`
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   ${media.tablet`flex-direction: column;`}
   ${media.tablet`align-items: center;`}
   ${media.phone`flex-direction: column;`}
@@ -49,7 +49,7 @@ const StyledGuidesP = styled.p`
   ${media.phone`text-align: center;`}
 `;
 
-const randomize = myArray => {
+const randomize = (myArray) => {
   return myArray[Math.floor(Math.random() * myArray.length)];
 };
 

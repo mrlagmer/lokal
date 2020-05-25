@@ -7,13 +7,21 @@ import media from "../media";
 import { common } from "../Common";
 
 const StyledSection = styled.section`
+  max-width: 1127px;
   display: flex;
   flex-direction: column;
-  margin: ${common.margintb} 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 4rem;
+  margin-top: 2rem;
   ${media.phone`justify-content: center;`}
   ${media.phone`padding: 3rem 2rem;`}
   ${media.phone`margin: 4rem 0;`}
+`;
+
+const StyledFeatured = styled.div`
+  padding: 5rem;
+  background: linear-gradient(to right, ${colors.lgPurpuleRed});
 `;
 
 const P = styled.p`
