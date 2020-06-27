@@ -19,6 +19,7 @@ import { CoDText } from "../../ui/pages/Cod";
 import GuideForm from "../../ui/GuideForm";
 import Blog from "../../ui/Blog";
 import BlogPage from "../../ui/components/blog/BlogPage";
+import Shop from "../../ui/Shop";
 
 const browserHistory = createBrowserHistory();
 
@@ -30,6 +31,7 @@ export const RenderRoutes = () => (
       <Route exact path="/experience/edit/:id" component={EditExperienceForm} />
       <Route exact path="/addguide" component={GuideForm} />
       <Route exact path="/experiences" component={Experiences} />
+      <Route exact path="/shop" component={Shop} />
       <Route exact path="/alamat" component={Blog} />
       <Route exact path="/alamat/:slug" component={BlogPage} />
       <Route exact path="/signin" component={AuthPageSignIn} />
@@ -37,33 +39,35 @@ export const RenderRoutes = () => (
       <Route
         exact
         path="/about"
-        render={props => (
+        render={(props) => (
           <InfoPage {...props} title="About Us" text={AboutText.AboutText} />
         )}
       />
       <Route
         exact
         path="/privacy"
-        render={props => <InfoPage {...props} title="Privacy" text={privacy} />}
+        render={(props) => (
+          <InfoPage {...props} title="Privacy" text={privacy} />
+        )}
       />
       <Route
         exact
         path="/code-of-conduct"
-        render={props => (
+        render={(props) => (
           <InfoPage {...props} title="Code of Conduct" text={CoDText} />
         )}
       />
       <Route
         exact
         path="/cancelation-policy"
-        render={props => (
+        render={(props) => (
           <InfoPage {...props} title="Cancelation Policy" text={CancelText} />
         )}
       />
       <Route
         exact
         path="/terms-conditions"
-        render={props => (
+        render={(props) => (
           <InfoPage {...props} title="Terms & Condictions" text={TandCText} />
         )}
       />
